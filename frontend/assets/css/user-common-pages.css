@@ -1,0 +1,334 @@
+/* =========================================================
+   User common pages: communities and premium
+   Dark-first, mobile-first, preto/azul/roxo/branco.
+   ========================================================= */
+
+.user-common-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.user-page-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  overflow: hidden;
+  padding: 22px;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(circle at top left, rgba(91, 124, 255, 0.28), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(124, 58, 237, 0.22), transparent 34%),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(8, 13, 26, 0.98));
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
+}
+
+.user-page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.72), transparent);
+}
+
+.user-page-hero-content,
+.user-page-hero-panel {
+  position: relative;
+  z-index: 1;
+}
+
+.user-page-hero h1 {
+  max-width: 820px;
+  margin-top: 16px;
+  color: #ffffff;
+  font-size: clamp(1.7rem, 4vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.user-page-hero p {
+  max-width: 780px;
+  margin-top: 14px;
+  color: rgba(226, 232, 240, 0.82);
+  line-height: 1.7;
+}
+
+.user-page-hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.user-page-hero-actions .btn {
+  justify-content: center;
+}
+
+.user-page-hero-panel {
+  align-self: stretch;
+  padding: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: var(--radius-xl);
+  background: rgba(15, 23, 42, 0.62);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.hero-panel-label {
+  display: block;
+  color: rgba(203, 213, 225, 0.76);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.user-page-hero-panel strong {
+  display: block;
+  margin-top: 12px;
+  color: #ffffff;
+  font-size: clamp(2rem, 8vw, 3.2rem);
+  font-weight: 950;
+  line-height: 1;
+}
+
+.user-page-hero-panel p {
+  margin-top: 12px;
+  color: rgba(226, 232, 240, 0.76);
+  font-size: 0.95rem;
+}
+
+.user-metric-grid .stats-card-value.text-fit {
+  font-size: clamp(1.15rem, 3vw, 1.55rem);
+  line-height: 1.2;
+}
+
+.communities-section {
+  margin-top: 0;
+}
+
+.community-card-grid,
+.premium-feature-grid,
+.premium-plan-comparison {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.community-user-card,
+.premium-feature-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.98), rgba(11, 18, 32, 0.98));
+  box-shadow: var(--shadow-sm);
+}
+
+.community-user-card.is-joined {
+  border-color: rgba(91, 124, 255, 0.56);
+  box-shadow: 0 18px 48px rgba(91, 124, 255, 0.14);
+}
+
+.community-user-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.community-user-icon,
+.premium-feature-icon {
+  width: 46px;
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(91, 124, 255, 0.2), rgba(124, 58, 237, 0.24));
+  color: #dbeafe;
+  font-size: 1.25rem;
+}
+
+.community-user-card h3,
+.premium-feature-card h3 {
+  color: var(--color-text);
+  font-size: 1.12rem;
+  font-weight: 900;
+}
+
+.community-user-card p,
+.premium-feature-card p {
+  color: var(--color-text-light);
+  line-height: 1.55;
+}
+
+.community-user-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.community-user-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 10px;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.62);
+  color: var(--color-text-light);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.user-common-layout {
+  align-items: stretch;
+}
+
+.user-timeline-card .content-card-body {
+  min-height: 220px;
+}
+
+.user-timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.user-timeline-item,
+.user-timeline-empty,
+.premium-disclaimer-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: var(--radius-lg);
+  background: rgba(15, 23, 42, 0.46);
+}
+
+.user-timeline-icon,
+.premium-disclaimer-body > i {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  border-radius: 14px;
+  background: rgba(91, 124, 255, 0.16);
+  color: #9fb5ff;
+}
+
+.user-timeline-item strong,
+.premium-disclaimer-body strong {
+  display: block;
+  color: var(--color-text);
+  font-weight: 900;
+}
+
+.user-timeline-item p,
+.user-timeline-empty p,
+.premium-disclaimer-body p {
+  margin-top: 4px;
+  color: var(--color-text-light);
+  line-height: 1.45;
+}
+
+.premium-plan-comparison {
+  align-items: stretch;
+}
+
+.user-plan-card,
+.premium-coming-card {
+  min-height: 100%;
+}
+
+.premium-feature-card .badge {
+  width: fit-content;
+  margin-top: auto;
+}
+
+.premium-disclaimer-card {
+  border-color: rgba(91, 124, 255, 0.28);
+}
+
+body[data-page="communities"] .bt-select,
+body[data-page="communities"] .bt-select-menu {
+  z-index: 120;
+}
+
+body[data-page="communities"] .communities-preferences-card {
+  overflow: visible;
+}
+
+body[data-page="communities"] .communities-preferences-card .content-card-body,
+body[data-page="communities"] .communities-form .input-group {
+  overflow: visible;
+}
+
+@media (min-width: 641px) {
+  .user-page-hero-actions {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .user-page-hero-actions .btn {
+    width: auto;
+  }
+
+  .community-card-grid,
+  .premium-feature-grid,
+  .premium-plan-comparison {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  .user-page-hero {
+    grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.55fr);
+    align-items: center;
+    padding: 30px;
+  }
+
+  .community-card-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .premium-feature-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .user-common-page {
+    gap: 18px;
+  }
+
+  .user-page-hero {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .community-user-card,
+  .premium-feature-card {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .community-user-meta span {
+    font-size: 0.72rem;
+  }
+}

@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Timer de treino | Bora Treinar</title>
+
+    <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg" />
+    <link rel="shortcut icon" href="../../assets/img/favicon.svg" />
+    <meta name="theme-color" content="#070a14" />
+
+    <meta
+      name="description"
+      content="Use o timer dedicado do Bora Treinar para acompanhar descanso e cronometro de treino em modo foco."
+    />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="stylesheet" href="../../assets/css/global.css" />
+    <link rel="stylesheet" href="../../assets/css/layout.css" />
+    <link rel="stylesheet" href="../../assets/css/components.css" />
+    <link rel="stylesheet" href="../../assets/css/pages.css" />
+  </head>
+
+  <body data-page="workout-timer" data-page-type="protected">
+    <main class="timer-page">
+      <header class="timer-page-header">
+        <a
+          class="timer-back-button"
+          href="./workout-session.html"
+          aria-label="Voltar para sessao de treino"
+        >
+          <i class="bi bi-arrow-left" aria-hidden="true"></i>
+          <span>Voltar</span>
+        </a>
+
+        <div class="timer-page-title-group">
+          <span class="timer-page-subtitle">Modo foco</span>
+          <h1 class="timer-page-title">Timer de treino</h1>
+        </div>
+
+        <div class="timer-total-pill" aria-label="Tempo total do treino">
+          <span>Tempo total</span>
+          <strong data-focus-total-time>00:00</strong>
+        </div>
+
+        <div class="timer-mode-switch" aria-label="Selecionar modo do timer">
+          <button
+            class="timer-mode-button"
+            type="button"
+            data-timer-mode="rest"
+            aria-label="Abrir timer de descanso"
+          >
+            Descanso
+          </button>
+
+          <button
+            class="timer-mode-button"
+            type="button"
+            data-timer-mode="workout"
+            aria-label="Abrir cronometro de treino"
+          >
+            Treino
+          </button>
+        </div>
+      </header>
+
+      <section
+        class="timer-screen timer-screen-rest"
+        data-timer-screen="rest"
+        aria-label="Timer de descanso"
+      >
+        <div class="rest-visual-timer">
+          <svg class="rest-ring" viewBox="0 0 220 220" aria-hidden="true">
+            <circle class="rest-ring-track" cx="110" cy="110" r="96"></circle>
+            <circle
+              class="rest-ring-progress"
+              cx="110"
+              cy="110"
+              r="96"
+              data-rest-ring-progress
+            ></circle>
+          </svg>
+
+          <div class="rest-visual-content">
+            <strong class="rest-main-time" data-rest-main-time>01:30</strong>
+            <small class="rest-end-time" data-rest-end-time>
+              Termina as --:--
+            </small>
+          </div>
+        </div>
+
+        <div class="rest-timer-buttons">
+          <button
+            class="timer-circle-button timer-circle-button-danger"
+            type="button"
+            data-rest-cancel
+            aria-label="Cancelar e resetar descanso"
+          >
+            Cancelar
+          </button>
+
+          <button
+            class="timer-circle-button timer-circle-button-accent"
+            type="button"
+            data-rest-toggle
+            aria-label="Iniciar, pausar ou retomar descanso"
+          >
+            Iniciar
+          </button>
+        </div>
+
+        <div class="timer-settings-card" aria-label="Informacoes do descanso">
+          <div class="timer-settings-row">
+            <span>Etiqueta</span>
+            <strong>Descanso</strong>
+          </div>
+          <div class="timer-settings-divider"></div>
+          <div class="timer-settings-row">
+            <span>Ao terminar</span>
+            <strong>Feedback visual</strong>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="timer-screen timer-screen-workout"
+        data-timer-screen="workout"
+        aria-label="Cronometro de treino"
+      >
+        <div class="workout-stopwatch-display">
+          <span>Cronometro</span>
+          <strong class="workout-main-time" data-workout-main-time>
+            00:00,00
+          </strong>
+        </div>
+
+        <div class="workout-timer-buttons">
+          <button
+            class="timer-circle-button timer-circle-button-muted"
+            type="button"
+            data-workout-lap-reset
+            aria-label="Registrar volta ou resetar cronometro"
+          >
+            Volta
+          </button>
+
+          <button
+            class="timer-circle-button timer-circle-button-success"
+            type="button"
+            data-workout-toggle
+            aria-label="Iniciar ou parar cronometro de treino"
+          >
+            Iniciar
+          </button>
+        </div>
+
+        <section class="workout-laps-card" aria-label="Lista de voltas">
+          <div class="workout-laps-pagination">
+            <span>Voltas</span>
+            <strong>Tempo</strong>
+          </div>
+
+          <ol class="workout-laps-list" data-workout-laps-list>
+            <li class="workout-lap-row">
+              <span>Nenhuma volta registrada</span>
+              <strong>--:--,--</strong>
+            </li>
+          </ol>
+        </section>
+      </section>
+    </main>
+
+    <script src="../../assets/js/config.js"></script>
+    <script src="../../assets/js/utils.js"></script>
+    <script src="../../assets/js/api.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/workout-timer.js"></script>
+  </body>
+</html>

@@ -1,0 +1,451 @@
+/* =========================================================
+   Theme CSS
+   Regras globais de tema, dark mode e pequenos ajustes visuais.
+   ========================================================= */
+
+/* =========================================================
+   DARK THEME TOKENS
+   ========================================================= */
+
+html.dark-mode,
+body.dark-mode {
+  --bt-dark-bg: #070a14;
+  --bt-dark-surface: #101827;
+  --bt-dark-surface-muted: #0b1220;
+  --bt-dark-panel: #0f1726;
+  --bt-dark-control: #111a2b;
+  --bt-dark-control-hover: #182339;
+  --bt-dark-border: #253047;
+  --bt-dark-text: #f8fafc;
+  --bt-dark-text-muted: #a8b3c7;
+  --bt-dark-text-soft: #64748b;
+  --bt-accent-soft: rgba(109, 93, 252, 0.16);
+  --bt-accent-border: rgba(91, 124, 255, 0.34);
+  --bt-gradient-primary: linear-gradient(135deg, #5b7cff, #7c3aed);
+
+  --color-background: var(--bt-dark-bg);
+  --color-surface: var(--bt-dark-surface);
+  --color-surface-secondary: var(--bt-dark-surface-muted);
+  --color-border: var(--bt-dark-border);
+  --color-text: var(--bt-dark-text);
+  --color-text-light: var(--bt-dark-text-muted);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 12px 28px rgba(0, 0, 0, 0.32);
+  --shadow-lg: 0 22px 48px rgba(0, 0, 0, 0.38);
+}
+
+/* =========================================================
+   TOPBAR
+   ========================================================= */
+
+body.dark-mode .topbar {
+  background-color: var(--bt-dark-surface-muted) !important;
+  border-bottom-color: rgba(91, 124, 255, 0.18) !important;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+body.dark-mode .topbar-page-title,
+body.dark-mode .bt-topbar-title strong {
+  color: var(--bt-dark-text) !important;
+}
+
+body.dark-mode .topbar-page-subtitle,
+body.dark-mode .bt-topbar-eyebrow {
+  color: var(--bt-dark-text-muted) !important;
+}
+
+body.dark-mode .topbar-button,
+body.dark-mode .bt-topbar-menu,
+body.dark-mode .mobile-menu-toggle {
+  background-color: var(--bt-dark-control) !important;
+  border-color: var(--bt-dark-border) !important;
+  color: var(--bt-dark-text) !important;
+}
+
+body.dark-mode .topbar-button:hover,
+body.dark-mode .bt-topbar-menu:hover,
+body.dark-mode .mobile-menu-toggle:hover {
+  background-color: var(--bt-dark-control-hover) !important;
+  border-color: var(--bt-accent-border) !important;
+}
+
+.topbar-right .btn[href*="premium"] {
+  width: 42px !important;
+  min-width: 42px !important;
+  height: 42px !important;
+  min-height: 42px !important;
+  padding: 0 !important;
+  border-radius: 12px !important;
+  gap: 0 !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+.topbar-right .btn[href*="premium"] .btn-text {
+  display: none !important;
+}
+
+body.dark-mode .topbar-right .btn[href*="premium"] {
+  background-color: var(--bt-dark-control) !important;
+  border-color: var(--bt-dark-border) !important;
+  color: var(--bt-dark-text) !important;
+}
+
+body.dark-mode .topbar-right .btn[href*="premium"]:hover {
+  background-color: var(--bt-dark-control-hover) !important;
+  border-color: var(--bt-accent-border) !important;
+}
+
+/* =========================================================
+   WORKOUT HISTORY TABLE
+   ========================================================= */
+
+#workoutHistory .content-card,
+#workoutHistory .table-container,
+#workoutHistory .table {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+#workoutHistory .table-container {
+  display: block !important;
+  overflow-x: auto !important;
+}
+
+#workoutHistory .table {
+  min-width: 920px !important;
+  table-layout: fixed !important;
+}
+
+#workoutHistory .table th:nth-child(1),
+#workoutHistory .table td:nth-child(1) {
+  width: 16%;
+}
+
+#workoutHistory .table th:nth-child(2),
+#workoutHistory .table td:nth-child(2) {
+  width: 14%;
+}
+
+#workoutHistory .table th:nth-child(3),
+#workoutHistory .table td:nth-child(3) {
+  width: 14%;
+}
+
+#workoutHistory .table th:nth-child(4),
+#workoutHistory .table td:nth-child(4) {
+  width: 16%;
+}
+
+#workoutHistory .table th:nth-child(5),
+#workoutHistory .table td:nth-child(5) {
+  width: 10%;
+}
+
+#workoutHistory .table th:nth-child(6),
+#workoutHistory .table td:nth-child(6) {
+  width: 30%;
+}
+
+/* =========================================================
+   DARK APP SURFACES
+   ========================================================= */
+
+body.dark-mode[data-layout="app"] .workout-current-metric,
+body.dark-mode[data-layout="app"] .workout-summary-item,
+body.dark-mode[data-layout="app"] .set-item,
+body.dark-mode[data-layout="app"] .workout-exercise-item,
+body.dark-mode[data-layout="app"] .workout-card,
+body.dark-mode[data-layout="app"] .workout-meta-pill,
+body.dark-mode[data-layout="app"] .workout-filter-panel,
+body.dark-mode[data-layout="app"] .exercise-builder-item,
+body.dark-mode[data-layout="app"] .exercise-library-carousel,
+body.dark-mode[data-layout="app"] .exercise-library-empty,
+body.dark-mode[data-layout="app"] .exercise-library-list,
+body.dark-mode[data-layout="app"] .exercise-library-list-option,
+body.dark-mode[data-layout="app"] .exercise-library-search,
+body.dark-mode[data-layout="app"] .content-card-footer,
+body.dark-mode[data-layout="app"] .rest-timer,
+body.dark-mode[data-layout="app"] .floating-session-timer,
+body.dark-mode[data-layout="app"] .floating-session-timer-item,
+body.dark-mode[data-layout="app"] .bt-select-button,
+body.dark-mode[data-layout="app"] .bt-select-menu,
+body.dark-mode[data-layout="app"] .bt-select-menu button,
+body.dark-mode[data-layout="app"] .table thead,
+body.dark-mode[data-layout="app"] .table tbody tr:hover,
+body.dark-mode[data-layout="app"] .search-box,
+body.dark-mode[data-layout="app"] .empty-state,
+body.dark-mode[data-layout="app"] .empty-state-card {
+  background-color: var(--bt-dark-panel) !important;
+  border-color: var(--bt-dark-border) !important;
+  color: var(--bt-dark-text) !important;
+}
+
+body.dark-mode[data-layout="app"] .content-card,
+body.dark-mode[data-layout="app"] .stats-card,
+body.dark-mode[data-layout="app"] .quick-action-card,
+body.dark-mode[data-layout="app"] .profile-card,
+body.dark-mode[data-layout="app"] .plan-card,
+body.dark-mode[data-layout="app"] .table-container,
+body.dark-mode[data-layout="app"] .settings-nav,
+body.dark-mode[data-layout="app"] .input,
+body.dark-mode[data-layout="app"] select,
+body.dark-mode[data-layout="app"] textarea {
+  background-color: var(--bt-dark-surface) !important;
+  border-color: var(--bt-dark-border) !important;
+}
+
+body.dark-mode[data-layout="app"] .exercise-library-list-toggle,
+body.dark-mode[data-layout="app"] .exercise-library-search input,
+body.dark-mode[data-layout="app"] .exercise-builder-item .input,
+body.dark-mode[data-layout="app"] .workout-filter-panel .input,
+body.dark-mode[data-layout="app"] .search-box .input {
+  background-color: var(--bt-dark-surface-muted) !important;
+  border-color: var(--bt-dark-border) !important;
+  color: var(--bt-dark-text) !important;
+}
+
+body.dark-mode[data-layout="app"] .page-content,
+body.dark-mode[data-layout="app"] .settings-content,
+body.dark-mode[data-layout="app"] .content-card,
+body.dark-mode[data-layout="app"] .stats-card,
+body.dark-mode[data-layout="app"] .quick-action-card,
+body.dark-mode[data-layout="app"] .profile-card,
+body.dark-mode[data-layout="app"] .plan-card,
+body.dark-mode[data-layout="app"] .table-container,
+body.dark-mode[data-layout="app"] .settings-nav {
+  color: var(--bt-dark-text) !important;
+}
+
+/* =========================================================
+   DARK TEXT CONTRAST
+   ========================================================= */
+
+body.dark-mode[data-layout="app"] .page-title,
+body.dark-mode[data-layout="app"] .dashboard-section-title,
+body.dark-mode[data-layout="app"] .content-card-title,
+body.dark-mode[data-layout="app"] .quick-action-title,
+body.dark-mode[data-layout="app"] .stats-card-value,
+body.dark-mode[data-layout="app"] .profile-name,
+body.dark-mode[data-layout="app"] .profile-stat-value,
+body.dark-mode[data-layout="app"] .plan-name,
+body.dark-mode[data-layout="app"] .plan-price,
+body.dark-mode[data-layout="app"] .workout-current-metric strong,
+body.dark-mode[data-layout="app"] .workout-summary-item strong,
+body.dark-mode[data-layout="app"] .set-info strong,
+body.dark-mode[data-layout="app"] .table th,
+body.dark-mode[data-layout="app"] .rest-timer strong,
+body.dark-mode[data-layout="app"] .exercise-item-title,
+body.dark-mode[data-layout="app"] .exercise-library-list-toggle,
+body.dark-mode[data-layout="app"] .exercise-library-list-option strong,
+body.dark-mode[data-layout="app"] .workout-card-title,
+body.dark-mode[data-layout="app"] .empty-state h3,
+body.dark-mode[data-layout="app"] label,
+body.dark-mode[data-layout="app"] h1,
+body.dark-mode[data-layout="app"] h2,
+body.dark-mode[data-layout="app"] h3,
+body.dark-mode[data-layout="app"] h4,
+body.dark-mode[data-layout="app"] strong {
+  color: var(--bt-dark-text) !important;
+}
+
+body.dark-mode[data-layout="app"] .page-description,
+body.dark-mode[data-layout="app"] .content-card-description,
+body.dark-mode[data-layout="app"] .quick-action-description,
+body.dark-mode[data-layout="app"] .stats-card-title,
+body.dark-mode[data-layout="app"] .stats-card-description,
+body.dark-mode[data-layout="app"] .profile-bio,
+body.dark-mode[data-layout="app"] .profile-stat-label,
+body.dark-mode[data-layout="app"] .plan-price span,
+body.dark-mode[data-layout="app"] .plan-feature,
+body.dark-mode[data-layout="app"] .workout-current-metric span,
+body.dark-mode[data-layout="app"] .workout-summary-item span,
+body.dark-mode[data-layout="app"] .set-info small,
+body.dark-mode[data-layout="app"] .table td,
+body.dark-mode[data-layout="app"] .bt-select-button,
+body.dark-mode[data-layout="app"] .bt-select-menu button,
+body.dark-mode[data-layout="app"] .rest-timer span,
+body.dark-mode[data-layout="app"] .exercise-library-carousel-header strong,
+body.dark-mode[data-layout="app"] .exercise-library-empty span,
+body.dark-mode[data-layout="app"] .exercise-library-list-option span,
+body.dark-mode[data-layout="app"] .workout-card-description,
+body.dark-mode[data-layout="app"] .workout-meta-pill,
+body.dark-mode[data-layout="app"] .empty-state p,
+body.dark-mode[data-layout="app"] .text-muted,
+body.dark-mode[data-layout="app"] p,
+body.dark-mode[data-layout="app"] small {
+  color: var(--bt-dark-text-muted) !important;
+}
+
+body.dark-mode[data-layout="app"] .input,
+body.dark-mode[data-layout="app"] select,
+body.dark-mode[data-layout="app"] textarea {
+  color: var(--bt-dark-text) !important;
+}
+
+body.dark-mode[data-layout="app"] .input::placeholder,
+body.dark-mode[data-layout="app"] textarea::placeholder,
+body.dark-mode[data-layout="app"] .exercise-library-search input::placeholder {
+  color: var(--bt-dark-text-soft) !important;
+}
+
+/* =========================================================
+   DARK INTERACTIVE STATES
+   ========================================================= */
+
+body.dark-mode[data-layout="app"] .exercise-library-carousel-header,
+body.dark-mode[data-layout="app"] .exercise-builder-item-header,
+body.dark-mode[data-layout="app"] .workout-card-header {
+  border-color: var(--bt-dark-border) !important;
+}
+
+body.dark-mode[data-layout="app"] .bt-select-menu button:hover,
+body.dark-mode[data-layout="app"] .bt-select-menu button.is-selected,
+body.dark-mode[data-layout="app"] .exercise-library-list-option:hover,
+body.dark-mode[data-layout="app"] .exercise-library-list-option.is-selected,
+body.dark-mode[data-layout="app"] .settings-nav-link:hover,
+body.dark-mode[data-layout="app"] .settings-nav-link.active {
+  background-color: var(--bt-accent-soft) !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode[data-layout="app"] .settings-nav-link {
+  color: #c7d2fe !important;
+}
+
+body.dark-mode[data-layout="app"] .exercise-remove-button {
+  background-color: rgba(220, 38, 38, 0.1) !important;
+  border-color: rgba(220, 38, 38, 0.22) !important;
+  color: #fca5a5 !important;
+}
+
+body.dark-mode[data-layout="app"] .exercise-item-badge,
+body.dark-mode[data-layout="app"] .set-check,
+body.dark-mode[data-layout="app"] .workout-exercise-order {
+  background-color: var(--bt-accent-soft) !important;
+  color: #c7d2fe !important;
+}
+
+body.dark-mode[data-layout="app"] .exercise-carousel-dot {
+  background-color: var(--bt-dark-border) !important;
+}
+
+body.dark-mode[data-layout="app"] .exercise-carousel-dot.is-active {
+  background: var(--bt-gradient-primary) !important;
+}
+
+body.dark-mode[data-layout="app"] .content-card-footer {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+body.dark-mode[data-layout="app"] select.input,
+body.dark-mode[data-layout="app"] select,
+body.dark-mode[data-layout="app"] option {
+  background-color: var(--bt-dark-surface) !important;
+  color: var(--bt-dark-text) !important;
+}
+
+body.dark-mode[data-layout="app"] .btn-outline {
+  border-color: var(--bt-dark-border) !important;
+  color: var(--bt-dark-text) !important;
+  background-color: var(--bt-dark-control) !important;
+}
+
+body.dark-mode[data-layout="app"] .btn-outline:hover {
+  background-color: var(--bt-dark-control-hover) !important;
+  border-color: var(--bt-accent-border) !important;
+}
+
+/* =========================================================
+   BRAND AND THEME TOGGLE
+   ========================================================= */
+
+.landing-eyebrow,
+.quick-action-icon,
+.workout-exercise-order,
+.exercise-card-icon {
+  background-color: rgba(109, 93, 252, 0.12) !important;
+}
+
+.preview-community-dot.green {
+  background: #5b7cff !important;
+}
+
+.dashboard-welcome-card,
+.community-hero {
+  background:
+    linear-gradient(135deg, rgba(109, 93, 252, 0.94), rgba(37, 99, 235, 0.84), rgba(15, 23, 42, 0.96)),
+    var(--color-secondary) !important;
+  color: #ffffff;
+}
+
+.theme-preference-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-secondary);
+}
+
+.theme-preference-row h4 {
+  margin-bottom: 6px;
+  color: var(--color-text);
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.theme-toggle input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.theme-toggle-track {
+  width: 58px;
+  height: 32px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px;
+  border-radius: 999px;
+  background: var(--color-border);
+  transition: background-color var(--transition-fast);
+}
+
+.theme-toggle-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  background: #ffffff;
+  box-shadow: var(--shadow-sm);
+  transform: translateX(0);
+  transition: transform var(--transition-fast);
+}
+
+.theme-toggle input:checked + .theme-toggle-track {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-info));
+}
+
+.theme-toggle input:checked + .theme-toggle-track .theme-toggle-thumb {
+  transform: translateX(26px);
+}
+
+.theme-toggle input:focus-visible + .theme-toggle-track {
+  box-shadow: 0 0 0 4px rgba(109, 93, 252, 0.18);
+}
+
+@media (max-width: 768px) {
+  .theme-preference-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

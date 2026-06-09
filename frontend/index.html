@@ -1,0 +1,991 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Bora Treinar | Treinos e evolução fitness</title>
+
+    <meta
+      name="description"
+      content="Organize seus treinos, acompanhe sua evolução e prepare sua rotina fitness com o Bora Treinar."
+    />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="stylesheet" href="./assets/css/global.css" />
+    <link rel="stylesheet" href="./assets/css/layout.css" />
+    <link rel="stylesheet" href="./assets/css/components.css" />
+    <link rel="stylesheet" href="./assets/css/pages.css" />
+
+    <style>
+      .landing-page main {
+        width: 100%;
+      }
+
+      .landing-header {
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 18px 8px;
+      }
+
+      .landing-logo {
+        min-width: 0;
+      }
+
+      .landing-logo-icon {
+        width: 44px;
+        height: 44px;
+        flex: 0 0 44px;
+      }
+
+      .landing-logo span:last-child {
+        white-space: nowrap;
+      }
+
+      .landing-actions {
+        width: auto;
+        flex: 0 0 auto;
+      }
+
+      .landing-actions .btn {
+        flex: 0 0 auto;
+        min-width: 96px;
+        padding: 10px 16px;
+      }
+
+      .landing-hero {
+        min-height: auto;
+        gap: 18px;
+        padding: 16px 18px 28px;
+      }
+
+      .landing-hero-content {
+        max-width: 640px;
+      }
+
+      .landing-eyebrow {
+        margin-bottom: 14px;
+        padding: 7px 11px;
+        font-size: 0.82rem;
+      }
+
+      .landing-title {
+        max-width: 620px;
+        font-size: clamp(1.9rem, 9vw, 2.45rem);
+        line-height: 1.05;
+      }
+
+      .landing-description {
+        max-width: 560px;
+        margin-top: 14px;
+        font-size: 0.98rem;
+        line-height: 1.55;
+      }
+
+      .landing-hero-actions {
+        margin-top: 18px;
+      }
+
+      .landing-feature-pills {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 16px;
+      }
+
+      .landing-feature-pill {
+        min-height: 56px;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        padding: 8px 6px;
+        border-radius: 13px;
+        background:
+          linear-gradient(180deg, rgba(91, 124, 255, 0.08), rgba(124, 58, 237, 0.03)),
+          rgba(11, 16, 32, 0.82);
+        border: 1px solid rgba(91, 124, 255, 0.14);
+        color: #cbd5e1;
+        font-size: 0.68rem;
+        font-weight: 600;
+        line-height: 1.15;
+        text-align: center;
+        white-space: nowrap;
+      }
+
+      .landing-feature-pill i {
+        color: #8b7cf6;
+        font-size: 1rem;
+      }
+
+      .landing-feature-pill:nth-child(2) i,
+      .landing-feature-pill:nth-child(3) i {
+        color: #6ea8ff;
+      }
+
+      .landing-visual {
+        width: 100%;
+        align-items: stretch;
+      }
+
+      .landing-compact-preview {
+        position: relative;
+        max-width: none;
+        overflow: hidden;
+        padding: 12px;
+        border-radius: 24px;
+        background:
+          radial-gradient(circle at top left, rgba(91, 124, 255, 0.28), transparent 12rem),
+          radial-gradient(circle at bottom right, rgba(124, 58, 237, 0.24), transparent 12rem),
+          linear-gradient(180deg, rgba(15, 23, 42, 0.94), rgba(5, 7, 13, 0.96));
+        border: 1px solid rgba(139, 124, 246, 0.42);
+        box-shadow:
+          0 18px 48px rgba(0, 0, 0, 0.34),
+          0 0 0 1px rgba(91, 124, 255, 0.14),
+          0 0 44px rgba(91, 124, 255, 0.16);
+      }
+
+      .landing-compact-preview::before {
+        content: "";
+        position: absolute;
+        inset: -40% auto auto -20%;
+        width: 56%;
+        height: 92%;
+        background: radial-gradient(circle, rgba(124, 58, 237, 0.32), transparent 66%);
+        pointer-events: none;
+      }
+
+      .landing-compact-preview > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .landing-compact-preview .preview-phone-top {
+        margin-bottom: 10px;
+      }
+
+      .landing-compact-preview .preview-app-logo,
+      .landing-compact-preview .preview-user-avatar {
+        width: 36px;
+        height: 36px;
+        flex-basis: 36px;
+        border-radius: 12px;
+      }
+
+      .landing-compact-preview .preview-user-avatar {
+        background: rgba(255, 255, 255, 0.09);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .landing-compact-preview .preview-app-brand {
+        gap: 10px;
+      }
+
+      .landing-compact-preview .preview-app-brand strong {
+        font-size: 0.95rem;
+      }
+
+      .landing-compact-preview .preview-app-brand small {
+        font-size: 0.72rem;
+      }
+
+      .landing-compact-preview .preview-highlight-card {
+        margin-bottom: 0;
+        padding: 12px;
+        background: rgba(7, 12, 28, 0.7);
+        border: 1px solid rgba(91, 124, 255, 0.12);
+      }
+
+      .landing-compact-preview .preview-highlight-card small {
+        margin-bottom: 4px;
+        color: #9ab0ff;
+        font-size: 0.76rem;
+      }
+
+      .landing-compact-preview .preview-highlight-card h2 {
+        margin-bottom: 10px;
+        font-size: 1rem;
+      }
+
+      .landing-compact-preview .preview-highlight-grid {
+        gap: 8px;
+      }
+
+      .landing-compact-preview .preview-mini-card {
+        min-height: auto;
+        display: grid;
+        grid-template-columns: 32px minmax(0, 1fr);
+        align-items: center;
+        gap: 8px 10px;
+        padding: 10px;
+        border-radius: 15px;
+        background:
+          linear-gradient(135deg, rgba(91, 124, 255, 0.2), rgba(124, 58, 237, 0.18)),
+          rgba(11, 16, 32, 0.86);
+        border: 1px solid rgba(91, 124, 255, 0.14);
+      }
+
+      .preview-stat-icon {
+        width: 32px;
+        height: 32px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        color: #ffffff;
+        font-size: 0.95rem;
+      }
+
+      .preview-stat-icon.purple {
+        background: rgba(109, 93, 252, 0.22);
+        color: #a78bfa;
+        box-shadow: 0 0 0 6px rgba(109, 93, 252, 0.08);
+      }
+
+      .preview-stat-icon.pink {
+        background: rgba(168, 85, 247, 0.22);
+        color: #d946ef;
+        box-shadow: 0 0 0 6px rgba(168, 85, 247, 0.08);
+      }
+
+      .preview-stat-icon.blue {
+        background: rgba(37, 99, 235, 0.22);
+        color: #60a5fa;
+        box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.08);
+      }
+
+      .preview-stat-icon.cyan {
+        background: rgba(14, 165, 233, 0.2);
+        color: #38bdf8;
+        box-shadow: 0 0 0 6px rgba(14, 165, 233, 0.08);
+      }
+
+      .preview-stat-info {
+        min-width: 0;
+      }
+
+      .landing-compact-preview .preview-stat-info strong {
+        display: block;
+        color: #ffffff;
+        font-size: 1rem;
+        font-weight: 900;
+        line-height: 1.05;
+      }
+
+      .landing-compact-preview .preview-stat-info span {
+        display: block;
+        margin-top: 3px;
+        color: #cbd5e1;
+        font-size: 0.66rem;
+        line-height: 1.25;
+      }
+
+      .preview-stat-bar {
+        grid-column: 2;
+        width: 100%;
+        height: 4px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: rgba(148, 163, 184, 0.14);
+      }
+
+      .preview-stat-bar span {
+        display: block;
+        width: var(--bar-width, 38%);
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, #5b7cff, #a855f7);
+      }
+
+      .preview-stat-bar.pink span {
+        background: linear-gradient(90deg, #7c3aed, #f472b6);
+      }
+
+      .preview-stat-bar.blue span {
+        background: linear-gradient(90deg, #2563eb, #60a5fa);
+      }
+
+      .preview-stat-bar.cyan span {
+        background: linear-gradient(90deg, #2563eb, #22d3ee);
+      }
+
+      .landing-desktop-benefits,
+      .landing-highlights {
+        display: none;
+      }
+
+      @media (max-width: 480px) {
+        .landing-feature-pill {
+          min-height: 52px;
+          padding: 7px 4px;
+          font-size: 0.64rem;
+        }
+
+        .landing-compact-preview {
+          padding: 10px;
+        }
+
+        .landing-compact-preview .preview-highlight-card {
+          padding: 11px;
+        }
+
+        .landing-compact-preview .preview-highlight-grid {
+          gap: 7px;
+        }
+
+        .landing-compact-preview .preview-mini-card {
+          grid-template-columns: 28px minmax(0, 1fr);
+          gap: 7px 8px;
+          padding: 9px;
+        }
+
+        .preview-stat-icon {
+          width: 28px;
+          height: 28px;
+          font-size: 0.82rem;
+        }
+      }
+
+      @media (max-width: 420px) and (max-height: 700px) {
+        .landing-header {
+          padding-top: 12px;
+          padding-bottom: 6px;
+        }
+
+        .landing-logo {
+          gap: 10px;
+          font-size: 1.05rem;
+        }
+
+        .landing-logo-icon {
+          width: 40px;
+          height: 40px;
+          flex-basis: 40px;
+        }
+
+        .landing-actions .btn {
+          min-width: 82px;
+          padding: 9px 12px;
+        }
+
+        .landing-hero {
+          gap: 12px;
+          padding: 12px 14px 18px;
+        }
+
+        .landing-eyebrow {
+          margin-bottom: 10px;
+          padding: 6px 10px;
+          font-size: 0.76rem;
+        }
+
+        .landing-title {
+          font-size: 1.7rem;
+        }
+
+        .landing-description {
+          margin-top: 10px;
+          font-size: 0.9rem;
+          line-height: 1.45;
+        }
+
+        .landing-hero-actions {
+          margin-top: 14px;
+        }
+
+        .landing-hero-actions .btn-primary {
+          padding-block: 11px;
+        }
+
+        .landing-feature-pills {
+          margin-top: 12px;
+        }
+
+        .landing-feature-pill {
+          min-height: 46px;
+          font-size: 0.6rem;
+        }
+
+        .landing-feature-pill i {
+          font-size: 0.9rem;
+        }
+
+        .landing-compact-preview .preview-phone-top {
+          margin-bottom: 8px;
+        }
+
+        .landing-compact-preview .preview-app-logo,
+        .landing-compact-preview .preview-user-avatar {
+          width: 32px;
+          height: 32px;
+          flex-basis: 32px;
+        }
+
+        .landing-compact-preview .preview-app-brand strong {
+          font-size: 0.86rem;
+        }
+
+        .landing-compact-preview .preview-app-brand small {
+          font-size: 0.64rem;
+        }
+
+        .landing-compact-preview .preview-highlight-card h2 {
+          margin-bottom: 8px;
+          font-size: 0.9rem;
+        }
+
+        .landing-compact-preview .preview-mini-card {
+          padding: 8px;
+        }
+
+        .landing-compact-preview .preview-stat-info strong {
+          font-size: 0.92rem;
+        }
+
+        .landing-compact-preview .preview-stat-info span {
+          font-size: 0.61rem;
+        }
+
+        .preview-stat-bar {
+          display: none;
+        }
+      }
+
+      @media (max-width: 380px) {
+        .landing-header {
+          padding-inline: 14px;
+        }
+
+        .landing-logo {
+          gap: 10px;
+          font-size: 1.05rem;
+        }
+
+        .landing-logo-icon {
+          width: 40px;
+          height: 40px;
+          flex-basis: 40px;
+        }
+
+        .landing-actions .btn {
+          min-width: 82px;
+          padding-inline: 12px;
+        }
+
+        .landing-hero {
+          padding-inline: 14px;
+        }
+
+        .landing-title {
+          font-size: 1.78rem;
+        }
+      }
+
+      @media (min-width: 769px) {
+        .landing-header {
+          padding: 24px 32px 8px;
+        }
+
+        .landing-actions .btn {
+          min-width: 120px;
+        }
+
+        .landing-hero {
+          grid-template-columns: minmax(0, 1fr);
+          padding: 40px 32px 56px;
+        }
+
+        .landing-title {
+          font-size: clamp(2.6rem, 5vw, 4rem);
+        }
+
+        .landing-description {
+          font-size: 1.08rem;
+        }
+
+        .landing-compact-preview {
+          max-width: 520px;
+        }
+      }
+
+      @media (min-width: 900px) and (max-width: 1100px) {
+        .landing-header {
+          max-width: 980px;
+          padding: 26px 32px 0;
+        }
+
+        .landing-hero {
+          max-width: 980px;
+          min-height: calc(100vh - 82px);
+          grid-template-columns: minmax(0, 1fr) minmax(330px, 0.86fr);
+          align-content: center;
+          align-items: center;
+          gap: 28px 34px;
+          padding: 34px 32px 58px;
+        }
+
+        .landing-hero-content {
+          max-width: 560px;
+        }
+
+        .landing-title {
+          max-width: 560px;
+          font-size: clamp(2.8rem, 5vw, 3.55rem);
+          letter-spacing: -0.8px;
+        }
+
+        .landing-description {
+          max-width: 520px;
+          margin-top: 16px;
+          font-size: 1rem;
+        }
+
+        .landing-hero-actions {
+          margin-top: 22px;
+        }
+
+        .landing-hero-actions .btn-primary {
+          min-width: 150px;
+          padding: 13px 20px;
+        }
+
+        .landing-feature-pills {
+          margin-top: 18px;
+        }
+
+        .landing-visual {
+          align-items: center;
+          justify-content: flex-end;
+        }
+
+        .landing-compact-preview {
+          max-width: 390px;
+          padding: 14px;
+          border-radius: 26px;
+        }
+
+        .landing-compact-preview .preview-phone-top {
+          margin-bottom: 12px;
+        }
+
+        .landing-compact-preview .preview-highlight-card {
+          padding: 14px;
+          border-radius: 20px;
+        }
+
+        .landing-compact-preview .preview-highlight-card h2 {
+          margin-bottom: 12px;
+          font-size: 1.08rem;
+        }
+
+        .landing-compact-preview .preview-mini-card {
+          min-height: 86px;
+          padding: 12px;
+        }
+
+        .landing-desktop-benefits {
+          grid-column: 1 / -1;
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 12px;
+          margin-top: 4px;
+        }
+
+        .landing-desktop-benefit {
+          display: grid;
+          grid-template-columns: auto 1fr;
+          gap: 10px;
+          align-items: start;
+          padding: 14px;
+          border-radius: 18px;
+          background: rgba(11, 16, 32, 0.78);
+          border: 1px solid rgba(91, 124, 255, 0.16);
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+        }
+
+        .landing-desktop-benefit i {
+          width: 36px;
+          height: 36px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 12px;
+          background: linear-gradient(135deg, #5b7cff, #7c3aed);
+          color: #ffffff;
+          font-size: 0.95rem;
+        }
+
+        .landing-desktop-benefit strong {
+          display: block;
+          color: #ffffff;
+          font-size: 0.9rem;
+          margin-bottom: 3px;
+        }
+
+        .landing-desktop-benefit span {
+          display: block;
+          color: #94a3b8;
+          font-size: 0.78rem;
+          line-height: 1.45;
+        }
+      }
+
+      @media (min-width: 1101px) {
+        .landing-header {
+          padding: 26px 40px 0;
+        }
+
+        .landing-hero {
+          min-height: calc(100vh - 92px);
+          grid-template-columns: 1.04fr 0.96fr;
+          align-content: center;
+          gap: 32px 76px;
+          padding: 36px 40px 70px;
+        }
+
+        .landing-hero-content {
+          max-width: 780px;
+        }
+
+        .landing-title {
+          max-width: 780px;
+          font-size: clamp(4rem, 5.2vw, 5.25rem);
+          letter-spacing: -1.8px;
+        }
+
+        .landing-description {
+          max-width: 680px;
+          margin-top: 18px;
+          font-size: 1.1rem;
+        }
+
+        .landing-hero-actions {
+          margin-top: 24px;
+        }
+
+        .landing-hero-actions .btn-primary {
+          min-width: 170px;
+          padding: 14px 22px;
+        }
+
+        .landing-feature-pills {
+          margin-top: 18px;
+        }
+
+        .landing-visual {
+          align-items: center;
+          justify-content: flex-end;
+        }
+
+        .landing-compact-preview {
+          max-width: 560px;
+          padding: 18px;
+          border-radius: 30px;
+        }
+
+        .landing-compact-preview .preview-phone-top {
+          margin-bottom: 16px;
+        }
+
+        .landing-compact-preview .preview-app-logo,
+        .landing-compact-preview .preview-user-avatar {
+          width: 46px;
+          height: 46px;
+          flex-basis: 46px;
+          border-radius: 14px;
+        }
+
+        .landing-compact-preview .preview-app-brand strong {
+          font-size: 1.05rem;
+        }
+
+        .landing-compact-preview .preview-app-brand small {
+          font-size: 0.78rem;
+        }
+
+        .landing-compact-preview .preview-highlight-card {
+          padding: 18px;
+          border-radius: 24px;
+        }
+
+        .landing-compact-preview .preview-highlight-card h2 {
+          margin-bottom: 16px;
+          font-size: 1.35rem;
+        }
+
+        .landing-compact-preview .preview-highlight-grid {
+          gap: 12px;
+        }
+
+        .landing-compact-preview .preview-mini-card {
+          min-height: 112px;
+          padding: 16px;
+          border-radius: 18px;
+        }
+
+        .landing-compact-preview .preview-mini-card strong {
+          font-size: 1.08rem;
+        }
+
+        .landing-compact-preview .preview-mini-card span {
+          font-size: 0.86rem;
+        }
+
+        .landing-desktop-benefits {
+          grid-column: 1 / -1;
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 16px;
+          margin-top: 18px;
+        }
+
+        .landing-desktop-benefit {
+          display: grid;
+          grid-template-columns: auto 1fr;
+          gap: 12px;
+          align-items: start;
+          padding: 18px;
+          border-radius: 22px;
+          background: rgba(11, 16, 32, 0.78);
+          border: 1px solid rgba(91, 124, 255, 0.16);
+          box-shadow: 0 14px 36px rgba(0, 0, 0, 0.18);
+        }
+
+        .landing-desktop-benefit i {
+          width: 42px;
+          height: 42px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 14px;
+          background: linear-gradient(135deg, #5b7cff, #7c3aed);
+          color: #ffffff;
+          font-size: 1rem;
+        }
+
+        .landing-desktop-benefit strong {
+          display: block;
+          color: #ffffff;
+          font-size: 1rem;
+          margin-bottom: 4px;
+        }
+
+        .landing-desktop-benefit span {
+          display: block;
+          color: #94a3b8;
+          font-size: 0.9rem;
+          line-height: 1.55;
+        }
+      }
+
+      @media (min-width: 1440px) {
+        .landing-header,
+        .landing-hero {
+          max-width: 1360px;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="landing-page" data-page="home" data-page-type="public">
+    <header class="landing-header">
+      <a
+        class="landing-logo"
+        href="./index.html"
+        aria-label="Página inicial Bora Treinar"
+      >
+        <span class="landing-logo-icon">
+          <i class="bi bi-lightning-charge-fill" aria-hidden="true"></i>
+        </span>
+
+        <span>Bora Treinar</span>
+      </a>
+
+      <div class="landing-actions">
+        <a href="./pages/auth/login.html" class="btn btn-outline"> Entrar </a>
+      </div>
+    </header>
+
+    <main>
+      <section class="landing-hero">
+        <div class="landing-hero-content">
+          <span class="landing-eyebrow">
+            <i class="bi bi-stars" aria-hidden="true"></i>
+            Plataforma fitness social
+          </span>
+
+          <h1 class="landing-title">
+            Organize seus treinos e acompanhe sua evolução.
+          </h1>
+
+          <p class="landing-description">
+            Crie rotinas, registre sessões e acompanhe seu progresso em um só
+            lugar.
+          </p>
+
+          <div class="landing-hero-actions">
+            <a href="./pages/auth/register.html" class="btn btn-primary">
+              <i class="bi bi-rocket-takeoff" aria-hidden="true"></i>
+              Criar conta
+            </a>
+          </div>
+
+          <div class="landing-feature-pills">
+            <span class="landing-feature-pill">
+              <i class="bi bi-activity" aria-hidden="true"></i>
+              Treinos
+            </span>
+
+            <span class="landing-feature-pill">
+              <i class="bi bi-clock-history" aria-hidden="true"></i>
+              Histórico
+            </span>
+
+            <span class="landing-feature-pill">
+              <i class="bi bi-people" aria-hidden="true"></i>
+              Comunidades
+            </span>
+
+            <span class="landing-feature-pill">
+              <i class="bi bi-gem" aria-hidden="true"></i>
+              Premium
+            </span>
+          </div>
+        </div>
+
+        <div
+          class="landing-visual"
+          aria-label="Prévia compacta do aplicativo Bora Treinar"
+        >
+          <div class="preview-phone landing-compact-preview">
+            <div class="preview-phone-top">
+              <div class="preview-app-brand">
+                <span class="preview-app-logo">
+                  <i class="bi bi-lightning-charge-fill" aria-hidden="true"></i>
+                </span>
+
+                <div>
+                  <strong>Dashboard</strong>
+                  <small>Treinos • Histórico • Progresso</small>
+                </div>
+              </div>
+
+              <div class="preview-user-avatar">
+                <i class="bi bi-person" aria-hidden="true"></i>
+              </div>
+            </div>
+
+            <div class="preview-highlight-card">
+              <small>Visão geral</small>
+
+              <h2>Seu progresso em um só lugar</h2>
+
+              <div class="preview-highlight-grid">
+                <div class="preview-mini-card">
+                  <span class="preview-stat-icon purple">
+                    <i class="bi bi-check2-circle" aria-hidden="true"></i>
+                  </span>
+
+                  <span class="preview-stat-info">
+                    <strong>0</strong>
+                    <span>Treinos concluídos</span>
+                  </span>
+
+                  <span class="preview-stat-bar">
+                    <span style="--bar-width: 34%"></span>
+                  </span>
+                </div>
+
+                <div class="preview-mini-card">
+                  <span class="preview-stat-icon pink">
+                    <i class="bi bi-fire" aria-hidden="true"></i>
+                  </span>
+
+                  <span class="preview-stat-info">
+                    <strong>0 dias</strong>
+                    <span>Sequência atual</span>
+                  </span>
+
+                  <span class="preview-stat-bar pink">
+                    <span style="--bar-width: 42%"></span>
+                  </span>
+                </div>
+
+                <div class="preview-mini-card">
+                  <span class="preview-stat-icon blue">
+                    <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  </span>
+
+                  <span class="preview-stat-info">
+                    <strong>0 XP</strong>
+                    <span>XP acumulado</span>
+                  </span>
+
+                  <span class="preview-stat-bar blue">
+                    <span style="--bar-width: 28%"></span>
+                  </span>
+                </div>
+
+                <div class="preview-mini-card">
+                  <span class="preview-stat-icon cyan">
+                    <i class="bi bi-bar-chart-fill" aria-hidden="true"></i>
+                  </span>
+
+                  <span class="preview-stat-info">
+                    <strong>Histórico</strong>
+                    <span>Acompanhe tudo</span>
+                  </span>
+
+                  <span class="preview-stat-bar cyan">
+                    <span style="--bar-width: 50%"></span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="landing-desktop-benefits"
+          aria-label="Principais recursos do Bora Treinar"
+        >
+          <article class="landing-desktop-benefit">
+            <i class="bi bi-journal-check" aria-hidden="true"></i>
+            <div>
+              <strong>Treinos organizados</strong>
+              <span>Monte rotinas claras e acompanhe cada sessão com facilidade.</span>
+            </div>
+          </article>
+
+          <article class="landing-desktop-benefit">
+            <i class="bi bi-graph-up-arrow" aria-hidden="true"></i>
+            <div>
+              <strong>Evolução visível</strong>
+              <span>Veja histórico, sequência e progresso em uma visão simples.</span>
+            </div>
+          </article>
+
+          <article class="landing-desktop-benefit">
+            <i class="bi bi-people" aria-hidden="true"></i>
+            <div>
+              <strong>Comunidade e Premium</strong>
+              <span>Explore recursos sociais e destaques avançados do app.</span>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="./assets/js/config.js"></script>
+    <script src="./assets/js/branding.js"></script>
+    <script src="./assets/js/utils.js"></script>
+    <script src="./assets/js/api.js"></script>
+  </body>
+</html>

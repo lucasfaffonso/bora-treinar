@@ -1,0 +1,193 @@
+/* =========================================================
+   Workout form carousel
+   Mantém os exercícios do formulário em formato de carrossel
+   também no desktop.
+   ========================================================= */
+
+body[data-page="workout-form"] .exercise-builder {
+  gap: 16px;
+}
+
+body[data-page="workout-form"] .exercise-builder-track {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  overflow: visible;
+}
+
+body[data-page="workout-form"] .exercise-builder-track .exercise-builder-item {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0;
+}
+
+body[data-page="workout-form"]
+  .exercise-builder-track
+  .exercise-builder-item:not(.is-active-exercise) {
+  display: none !important;
+}
+
+body[data-page="workout-form"]
+  .exercise-builder-track
+  .exercise-builder-item.is-active-exercise {
+  display: block !important;
+}
+
+body[data-page="workout-form"] .exercise-carousel-dots {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 14px 0 0;
+}
+
+body[data-page="workout-form"] .exercise-carousel-dot {
+  width: 18px;
+  height: 6px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.34);
+  cursor: pointer;
+  transition:
+    width 0.2s ease,
+    background-color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+body[data-page="workout-form"] .exercise-carousel-dot.is-active {
+  width: 28px;
+  background: linear-gradient(135deg, #5b7cff, #7c3aed);
+}
+
+body[data-page="workout-form"] .exercise-carousel-dot:hover {
+  opacity: 0.82;
+}
+
+body[data-page="workout-form"] .exercise-carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+body[data-page="workout-form"] .exercise-carousel-control {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 14px;
+  border: 1px solid rgba(91, 124, 255, 0.2);
+  border-radius: 14px;
+  background: #ffffff;
+  color: #0b1020;
+  font-size: 0.88rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+body[data-page="workout-form"] .exercise-carousel-control:hover:not(:disabled) {
+  border-color: rgba(91, 124, 255, 0.38);
+  background: rgba(91, 124, 255, 0.08);
+  transform: translateY(-1px);
+}
+
+body[data-page="workout-form"] .exercise-carousel-control:disabled {
+  opacity: 0.48;
+  cursor: not-allowed;
+}
+
+body[data-page="workout-form"] .exercise-carousel-counter {
+  min-width: 58px;
+  color: #64748b;
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+body.dark-mode[data-page="workout-form"] .exercise-builder-track .exercise-builder-item,
+body.dark-mode[data-page="workout-form"] .exercise-library-carousel,
+body.dark-mode[data-page="workout-form"] .exercise-library-empty,
+body.dark-mode[data-page="workout-form"] .exercise-library-list,
+body.dark-mode[data-page="workout-form"] .exercise-library-list-option {
+  background: #101827 !important;
+  border-color: #253047 !important;
+  color: #f8fafc !important;
+}
+
+body.dark-mode[data-page="workout-form"] .exercise-builder-grid .input,
+body.dark-mode[data-page="workout-form"] .exercise-library-list-toggle,
+body.dark-mode[data-page="workout-form"] .exercise-library-search input {
+  background: #0b1220 !important;
+  border-color: #253047 !important;
+  color: #f8fafc !important;
+}
+
+body.dark-mode[data-page="workout-form"] .exercise-item-title,
+body.dark-mode[data-page="workout-form"] .exercise-library-list-option strong,
+body.dark-mode[data-page="workout-form"] .exercise-library-list-toggle {
+  color: #f8fafc !important;
+}
+
+body.dark-mode[data-page="workout-form"] .exercise-library-carousel-header strong,
+body.dark-mode[data-page="workout-form"] .exercise-library-empty span,
+body.dark-mode[data-page="workout-form"] .exercise-library-list-option span {
+  color: #a8b3c7 !important;
+}
+
+body.dark-mode[data-page="workout-form"] .exercise-builder-grid .input::placeholder,
+body.dark-mode[data-page="workout-form"] .exercise-library-search input::placeholder {
+  color: #64748b !important;
+}
+
+body.dark-mode[data-page="workout-form"] .exercise-carousel-dot {
+  background: #253047;
+}
+
+body.dark-mode[data-page="workout-form"] .exercise-carousel-dot.is-active {
+  background: linear-gradient(135deg, #5b7cff, #7c3aed);
+}
+
+body.dark-mode[data-page="workout-form"] .exercise-carousel-control {
+  background: #111a2b;
+  border-color: #253047;
+  color: #f8fafc;
+}
+
+body.dark-mode[data-page="workout-form"]
+  .exercise-carousel-control:hover:not(:disabled) {
+  background: #182339;
+  border-color: rgba(91, 124, 255, 0.34);
+}
+
+body.dark-mode[data-page="workout-form"] .exercise-carousel-counter {
+  color: #a8b3c7;
+}
+
+@media (max-width: 640px) {
+  body[data-page="workout-form"] .exercise-carousel-dots {
+    margin-top: 12px;
+  }
+
+  body[data-page="workout-form"] .exercise-carousel-controls {
+    gap: 10px;
+  }
+
+  body[data-page="workout-form"] .exercise-carousel-control {
+    min-height: 38px;
+    padding: 0 12px;
+  }
+
+  body[data-page="workout-form"] .exercise-carousel-counter {
+    min-width: 48px;
+    font-size: 0.82rem;
+  }
+}

@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Treinos | Bora Treinar</title>
+
+    <meta
+      name="description"
+      content="Gerencie seus treinos no Bora Treinar, acompanhe sua rotina e organize seus exercícios."
+    />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="stylesheet" href="../../assets/css/global.css" />
+    <link rel="stylesheet" href="../../assets/css/layout.css" />
+    <link rel="stylesheet" href="../../assets/css/components.css" />
+    <link rel="stylesheet" href="../../assets/css/pages.css" />
+  </head>
+
+  <body data-page="workouts" data-page-type="protected" data-layout="app">
+    <div class="app-layout">
+      <aside class="sidebar" aria-label="Menu principal">
+        <a
+          class="sidebar-logo"
+          href="../dashboard/dashboard.html"
+          aria-label="Ir para o dashboard"
+        >
+          <span class="sidebar-logo-icon">
+            <i class="bi bi-lightning-charge-fill" aria-hidden="true"></i>
+          </span>
+
+          <span class="sidebar-logo-text">
+            <span class="sidebar-logo-title">Bora Treinar</span>
+            <span class="sidebar-logo-subtitle">Fitness social</span>
+          </span>
+        </a>
+
+        <button
+          class="sidebar-mobile-close"
+          type="button"
+          data-bt-sidebar-close
+          aria-label="Fechar menu"
+        >
+          <i class="bi bi-x-lg" aria-hidden="true"></i>
+        </button>
+
+        <nav class="sidebar-nav" aria-label="Navegação interna">
+          <span class="sidebar-section-title">Menu</span>
+
+          <a class="sidebar-link" href="../dashboard/dashboard.html">
+            <span class="sidebar-link-icon">
+              <i class="bi bi-house-door" aria-hidden="true"></i>
+            </span>
+            <span class="sidebar-link-text">Inicial</span>
+          </a>
+
+          <a
+            class="sidebar-link active"
+            href="./workouts.html"
+            aria-current="page"
+          >
+            <span class="sidebar-link-icon">
+              <i class="bi bi-activity" aria-hidden="true"></i>
+            </span>
+            <span class="sidebar-link-text">Treinos</span>
+          </a>
+
+          <a class="sidebar-link" href="../exercises/exercises.html">
+            <span class="sidebar-link-icon">
+              <i class="bi bi-heart-pulse" aria-hidden="true"></i>
+            </span>
+            <span class="sidebar-link-text">Exercícios</span>
+          </a>
+
+          <a class="sidebar-link" href="../communities/communities.html">
+            <span class="sidebar-link-icon">
+              <i class="bi bi-people" aria-hidden="true"></i>
+            </span>
+            <span class="sidebar-link-text">Comunidades</span>
+          </a>
+
+          <a class="sidebar-link" href="../search.html">
+            <span class="sidebar-link-icon">
+              <i class="bi bi-search" aria-hidden="true"></i>
+            </span>
+            <span class="sidebar-link-text">Pesquisa</span>
+          </a>
+
+          <a class="sidebar-link" href="../ranking.html">
+            <span class="sidebar-link-icon">
+              <i class="bi bi-trophy" aria-hidden="true"></i>
+            </span>
+            <span class="sidebar-link-text">Ranking</span>
+          </a>
+
+          <span class="sidebar-section-title">Conta</span>
+
+          <a class="sidebar-link" href="../premium/premium.html">
+            <span class="sidebar-link-icon">
+              <i class="bi bi-gem" aria-hidden="true"></i>
+            </span>
+            <span class="sidebar-link-text">Premium</span>
+          </a>
+
+          <a class="sidebar-link" href="../profile/profile.html">
+            <span class="sidebar-link-icon">
+              <i class="bi bi-person-circle" aria-hidden="true"></i>
+            </span>
+            <span class="sidebar-link-text">Perfil</span>
+          </a>
+
+          <a class="sidebar-link" href="../settings/settings.html">
+            <span class="sidebar-link-icon">
+              <i class="bi bi-gear" aria-hidden="true"></i>
+            </span>
+            <span class="sidebar-link-text">Configurações</span>
+          </a>
+
+          <a
+            class="sidebar-link"
+            href="../admin/admin-dashboard.html"
+            data-admin-only
+          >
+            <span class="sidebar-link-icon">
+              <i class="bi bi-shield-lock" aria-hidden="true"></i>
+            </span>
+            <span class="sidebar-link-text">Admin</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="sidebar-user">
+            <span class="sidebar-user-avatar" data-user-initials>BT</span>
+
+            <span class="sidebar-user-info">
+              <span class="sidebar-user-name" data-user-name>Usuário</span>
+              <span class="sidebar-user-role" data-premium-status
+                >Gratuito</span
+              >
+            </span>
+          </div>
+
+          <button class="btn btn-outline w-full" type="button" data-logout>
+            <i class="bi bi-box-arrow-right" aria-hidden="true"></i>
+            Sair
+          </button>
+        </div>
+      </aside>
+
+      <div class="main-area">
+        <header class="topbar">
+          <div class="topbar-left">
+            <button
+              class="mobile-menu-toggle"
+              type="button"
+              data-bt-sidebar-toggle
+              aria-label="Abrir menu"
+            >
+              <i class="bi bi-list" aria-hidden="true"></i>
+            </button>
+
+            <div>
+              <h1 class="topbar-page-title">Treinos</h1>
+              <p class="topbar-page-subtitle">
+                Organize sua rotina, acompanhe sua evolução e mantenha
+                consistência.
+              </p>
+            </div>
+          </div>
+
+          <div class="topbar-right">
+            <a
+              class="topbar-button"
+              href="../profile/profile.html"
+              aria-label="Abrir perfil"
+            >
+              <i class="bi bi-person" aria-hidden="true"></i>
+            </a>
+          </div>
+        </header>
+
+        <main class="page-content">
+          <section class="page-header">
+            <div class="page-title-group">
+              <h2 class="page-title">Meus treinos</h2>
+
+              <p class="page-description">
+                Visualize seus treinos ativos, crie novas rotinas e continue de
+                onde parou.
+              </p>
+            </div>
+
+            <div class="filter-actions">
+              <a class="btn btn-outline" href="../exercises/exercises.html">
+                <i class="bi bi-heart-pulse" aria-hidden="true"></i>
+                Ver exercícios
+              </a>
+
+              <a class="btn btn-primary" href="./workout-form.html">
+                <i class="bi bi-plus-lg" aria-hidden="true"></i>
+                Criar treino
+              </a>
+            </div>
+          </section>
+
+          <section class="grid grid-4" aria-label="Resumo dos treinos">
+            <article class="stats-card">
+              <div class="stats-card-header">
+                <span class="stats-card-title">Treinos ativos</span>
+                <span class="stats-card-icon">
+                  <i class="bi bi-activity" aria-hidden="true"></i>
+                </span>
+              </div>
+
+              <strong class="stats-card-value">0</strong>
+              <span class="stats-card-description">Treinos cadastrados</span>
+            </article>
+
+            <article class="stats-card">
+              <div class="stats-card-header">
+                <span class="stats-card-title">Concluídos</span>
+                <span class="stats-card-icon">
+                  <i class="bi bi-check2-circle" aria-hidden="true"></i>
+                </span>
+              </div>
+
+              <strong class="stats-card-value">0</strong>
+              <span class="stats-card-description">Sessões registradas</span>
+            </article>
+
+            <article class="stats-card">
+              <div class="stats-card-header">
+                <span class="stats-card-title">Esta semana</span>
+                <span class="stats-card-icon">
+                  <i class="bi bi-calendar-check" aria-hidden="true"></i>
+                </span>
+              </div>
+
+              <strong class="stats-card-value">0</strong>
+              <span class="stats-card-description">Treinos realizados</span>
+            </article>
+
+            <article class="stats-card">
+              <div class="stats-card-header">
+                <span class="stats-card-title">Tempo médio</span>
+                <span class="stats-card-icon">
+                  <i class="bi bi-stopwatch" aria-hidden="true"></i>
+                </span>
+              </div>
+
+              <strong class="stats-card-value">0min</strong>
+              <span class="stats-card-description">Média real registrada</span>
+            </article>
+          </section>
+
+          <section class="dashboard-section">
+            <div class="dashboard-section-header">
+              <h2 class="dashboard-section-title">Treinos em destaque</h2>
+
+              <div class="filter-actions">
+                <div class="search-box">
+                  <i class="bi bi-search search-icon" aria-hidden="true"></i>
+
+                  <input
+                    type="search"
+                    class="input"
+                    placeholder="Buscar treino"
+                    aria-label="Buscar treino"
+                    data-workout-search
+                  />
+                </div>
+
+                <button
+                  class="btn btn-outline"
+                  type="button"
+                  aria-expanded="false"
+                  data-workout-filter-toggle
+                >
+                  <i class="bi bi-funnel" aria-hidden="true"></i>
+                  Filtros
+                </button>
+              </div>
+            </div>
+
+            <div class="workout-filter-panel" data-workout-filter-panel hidden>
+              <div class="workout-filter-grid">
+                <div class="input-group">
+                  <label for="workoutGoalFilter">Objetivo</label>
+
+                  <select
+                    id="workoutGoalFilter"
+                    class="input native-select-hidden"
+                    data-workout-filter-goal
+                  >
+                    <option value="all">Todos</option>
+                    <option value="hypertrophy">Hipertrofia</option>
+                    <option value="strength">Força</option>
+                    <option value="conditioning">Condicionamento</option>
+                    <option value="weight-loss">Emagrecimento</option>
+                    <option value="mobility">Mobilidade</option>
+                  </select>
+
+                  <div
+                    class="bt-select"
+                    data-custom-select-for="workoutGoalFilter"
+                  >
+                    <button class="bt-select-button" type="button">
+                      <span data-selected-label>Todos</span>
+                      <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                    </button>
+
+                    <div class="bt-select-menu">
+                      <button
+                        class="is-selected"
+                        type="button"
+                        data-value="all"
+                      >
+                        Todos
+                      </button>
+                      <button type="button" data-value="hypertrophy">
+                        Hipertrofia
+                      </button>
+                      <button type="button" data-value="strength">Força</button>
+                      <button type="button" data-value="conditioning">
+                        Condicionamento
+                      </button>
+                      <button type="button" data-value="weight-loss">
+                        Emagrecimento
+                      </button>
+                      <button type="button" data-value="mobility">
+                        Mobilidade
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="input-group">
+                  <label for="workoutLevelFilter">Nível</label>
+
+                  <select
+                    id="workoutLevelFilter"
+                    class="input native-select-hidden"
+                    data-workout-filter-level
+                  >
+                    <option value="all">Todos</option>
+                    <option value="beginner">Iniciante</option>
+                    <option value="intermediate">Intermediário</option>
+                    <option value="advanced">Avançado</option>
+                  </select>
+
+                  <div
+                    class="bt-select"
+                    data-custom-select-for="workoutLevelFilter"
+                  >
+                    <button class="bt-select-button" type="button">
+                      <span data-selected-label>Todos</span>
+                      <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                    </button>
+
+                    <div class="bt-select-menu">
+                      <button
+                        class="is-selected"
+                        type="button"
+                        data-value="all"
+                      >
+                        Todos
+                      </button>
+                      <button type="button" data-value="beginner">
+                        Iniciante
+                      </button>
+                      <button type="button" data-value="intermediate">
+                        Intermediário
+                      </button>
+                      <button type="button" data-value="advanced">
+                        Avançado
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="input-group">
+                  <label for="workoutFrequencyFilter">Frequência</label>
+
+                  <select
+                    id="workoutFrequencyFilter"
+                    class="input native-select-hidden"
+                    data-workout-filter-frequency
+                  >
+                    <option value="all">Todas</option>
+                    <option value="2">2x por semana</option>
+                    <option value="3">3x por semana</option>
+                    <option value="4">4x por semana</option>
+                    <option value="5">5x por semana</option>
+                    <option value="6">6x por semana</option>
+                  </select>
+
+                  <div
+                    class="bt-select"
+                    data-custom-select-for="workoutFrequencyFilter"
+                  >
+                    <button class="bt-select-button" type="button">
+                      <span data-selected-label>Todas</span>
+                      <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                    </button>
+
+                    <div class="bt-select-menu">
+                      <button
+                        class="is-selected"
+                        type="button"
+                        data-value="all"
+                      >
+                        Todas
+                      </button>
+                      <button type="button" data-value="2">
+                        2x por semana
+                      </button>
+                      <button type="button" data-value="3">
+                        3x por semana
+                      </button>
+                      <button type="button" data-value="4">
+                        4x por semana
+                      </button>
+                      <button type="button" data-value="5">
+                        5x por semana
+                      </button>
+                      <button type="button" data-value="6">
+                        6x por semana
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="workout-filter-footer">
+                <button
+                  class="btn btn-outline"
+                  type="button"
+                  data-workout-filter-clear
+                >
+                  Limpar filtros
+                </button>
+              </div>
+            </div>
+
+            <div class="workout-list" data-workout-list></div>
+          </section>
+
+          <section class="dashboard-section" id="workoutHistory">
+            <div class="dashboard-section-header">
+              <div>
+                <h2 class="dashboard-section-title">Histórico recente</h2>
+
+                <p class="page-description">
+                  Consulte sessões reais registradas nos seus treinos.
+                </p>
+              </div>
+
+              <div class="filter-actions history-filter-actions">
+                <div class="search-box">
+                  <i class="bi bi-search search-icon" aria-hidden="true"></i>
+
+                  <input
+                    type="search"
+                    class="input"
+                    placeholder="Buscar no histórico"
+                    aria-label="Buscar no histórico"
+                    data-history-search
+                  />
+                </div>
+
+                <select
+                  id="historyPeriod"
+                  class="input native-select-hidden"
+                  aria-label="Filtrar histórico por período"
+                  data-history-period
+                >
+                  <option value="all">Todo período</option>
+                  <option value="7">Últimos 7 dias</option>
+                  <option value="30">Últimos 30 dias</option>
+                  <option value="90">Últimos 90 dias</option>
+                </select>
+
+                <div
+                  class="bt-select history-period-select"
+                  data-custom-select-for="historyPeriod"
+                >
+                  <button class="bt-select-button" type="button">
+                    <span data-selected-label>Todo período</span>
+                    <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                  </button>
+
+                  <div class="bt-select-menu">
+                    <button class="is-selected" type="button" data-value="all">
+                      Todo período
+                    </button>
+                    <button type="button" data-value="7">
+                      Últimos 7 dias
+                    </button>
+                    <button type="button" data-value="30">
+                      Últimos 30 dias
+                    </button>
+                    <button type="button" data-value="90">
+                      Últimos 90 dias
+                    </button>
+                  </div>
+                </div>
+
+                <button
+                  class="btn btn-outline"
+                  type="button"
+                  data-history-clear
+                >
+                  Limpar
+                </button>
+              </div>
+            </div>
+
+            <div class="history-summary" data-history-summary>
+              Mostrando histórico real salvo neste navegador.
+            </div>
+
+            <div class="content-card">
+              <div class="table-container">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Treino</th>
+                      <th>Data</th>
+                      <th>Duração</th>
+                      <th>Status</th>
+                      <th>XP</th>
+                      <th>Ações</th>
+                    </tr>
+                  </thead>
+                  <tbody id="historyTableBody" data-history-table-body></tbody>
+                </table>
+              </div>
+
+              <div class="history-navigation" data-history-navigation hidden>
+                <span data-history-navigation-label>
+                  Existem mais sessões reais cadastradas no histórico.
+                </span>
+
+                <button
+                  class="btn btn-outline"
+                  type="button"
+                  data-history-toggle-full
+                >
+                  Ver histórico completo
+                </button>
+              </div>
+            </div>
+          </section>
+          <a
+            class="floating-action-button is-hidden"
+            href="./workout-form.html"
+            aria-label="Criar novo treino"
+            data-scroll-fab
+          >
+            <i class="bi bi-plus-lg" aria-hidden="true"></i>
+            <span>Novo treino</span>
+          </a>
+        </main>
+      </div>
+    </div>
+
+    <script src="../../assets/js/config.js"></script>
+    <script src="../../assets/js/branding.js"></script>
+    <script src="../../assets/js/utils.js"></script>
+    <script src="../../assets/js/api.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/layout.js"></script>
+    <script src="../../assets/js/storage.js"></script>
+    <script src="../../assets/js/workouts.js"></script>
+    <script src="../../assets/js/workouts-pagination.js"></script>
+  </body>
+</html>

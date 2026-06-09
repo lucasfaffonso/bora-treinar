@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Detalhes do treino | Bora Treinar</title>
+
+    <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg" />
+    <link rel="shortcut icon" href="../../assets/img/favicon.svg" />
+    <meta name="theme-color" content="#070a14" />
+
+    <meta
+      name="description"
+      content="Veja os detalhes do treino no Bora Treinar, incluindo objetivo, nível, frequência, exercícios, séries e repetições."
+    />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="stylesheet" href="../../assets/css/global.css" />
+    <link rel="stylesheet" href="../../assets/css/layout.css" />
+    <link rel="stylesheet" href="../../assets/css/components.css" />
+    <link rel="stylesheet" href="../../assets/css/pages.css" />
+  </head>
+
+  <body data-page="workout-detail" data-page-type="protected" data-layout="app">
+    <div class="app-layout">
+      <aside class="sidebar" aria-label="Menu principal">
+        <a
+          class="sidebar-logo"
+          href="../dashboard/dashboard.html"
+          aria-label="Ir para o dashboard"
+        >
+          <span class="sidebar-logo-icon">
+            <i class="bi bi-lightning-charge-fill" aria-hidden="true"></i>
+          </span>
+
+          <span class="sidebar-logo-text">
+            <span class="sidebar-logo-title">Bora Treinar</span>
+            <span class="sidebar-logo-subtitle">Fitness social</span>
+          </span>
+        </a>
+
+        <button
+          class="sidebar-mobile-close"
+          type="button"
+          data-bt-sidebar-close
+          aria-label="Fechar menu"
+        >
+          <i class="bi bi-x-lg" aria-hidden="true"></i>
+        </button>
+
+        <nav class="sidebar-nav" aria-label="Navegação interna">
+          <span class="sidebar-section-title">Menu</span>
+
+          <a class="sidebar-link" href="../dashboard/dashboard.html">
+            <span class="sidebar-link-icon">
+              <i class="bi bi-house-door" aria-hidden="true"></i>
+            </span>
+            <span class="sidebar-link-text">Inicial</span>
+          </a>
+
+          <a
+            class="sidebar-link active"
+            href="./workouts.html"
+            aria-current="page"
+          >
+            <span class="sidebar-link-icon">
+              <i class="bi bi-activity" aria-hidden="true"></i>
+            </span>
+            <span class="sidebar-link-text">Treinos</span>
+          </a>
+
+          <a class="sidebar-link" href="../exercises/exercises.html">
+            <span class="sidebar-link-icon">
+              <i class="bi bi-heart-pulse" aria-hidden="true"></i>
+            </span>
+            <span class="sidebar-link-text">Exercícios</span>
+          </a>
+
+          <a class="sidebar-link" href="../communities/communities.html">
+            <span class="sidebar-link-icon">
+              <i class="bi bi-people" aria-hidden="true"></i>
+            </span>
+            <span class="sidebar-link-text">Comunidades</span>
+          </a>
+
+          <a class="sidebar-link" href="../search.html">
+            <span class="sidebar-link-icon">
+              <i class="bi bi-search" aria-hidden="true"></i>
+            </span>
+            <span class="sidebar-link-text">Pesquisa</span>
+          </a>
+
+          <a class="sidebar-link" href="../ranking.html">
+            <span class="sidebar-link-icon">
+              <i class="bi bi-trophy" aria-hidden="true"></i>
+            </span>
+            <span class="sidebar-link-text">Ranking</span>
+          </a>
+
+          <span class="sidebar-section-title">Conta</span>
+
+          <a class="sidebar-link" href="../premium/premium.html">
+            <span class="sidebar-link-icon">
+              <i class="bi bi-gem" aria-hidden="true"></i>
+            </span>
+            <span class="sidebar-link-text">Premium</span>
+          </a>
+
+          <a class="sidebar-link" href="../profile/profile.html">
+            <span class="sidebar-link-icon">
+              <i class="bi bi-person-circle" aria-hidden="true"></i>
+            </span>
+            <span class="sidebar-link-text">Perfil</span>
+          </a>
+
+          <a class="sidebar-link" href="../settings/settings.html">
+            <span class="sidebar-link-icon">
+              <i class="bi bi-gear" aria-hidden="true"></i>
+            </span>
+            <span class="sidebar-link-text">Configurações</span>
+          </a>
+
+          <a
+            class="sidebar-link"
+            href="../admin/admin-dashboard.html"
+            data-admin-only
+          >
+            <span class="sidebar-link-icon">
+              <i class="bi bi-shield-lock" aria-hidden="true"></i>
+            </span>
+            <span class="sidebar-link-text">Admin</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="sidebar-user">
+            <span class="sidebar-user-avatar" data-user-initials>BT</span>
+
+            <span class="sidebar-user-info">
+              <span class="sidebar-user-name" data-user-name>Usuário</span>
+              <span class="sidebar-user-role" data-premium-status
+                >Gratuito</span
+              >
+            </span>
+          </div>
+
+          <button class="btn btn-outline w-full" type="button" data-logout>
+            <i class="bi bi-box-arrow-right" aria-hidden="true"></i>
+            Sair
+          </button>
+        </div>
+      </aside>
+
+      <div class="main-area">
+        <header class="topbar">
+          <div class="topbar-left">
+            <button
+              class="mobile-menu-toggle"
+              type="button"
+              data-bt-sidebar-toggle
+              aria-label="Abrir menu"
+            >
+              <i class="bi bi-list" aria-hidden="true"></i>
+            </button>
+
+            <div>
+              <h1 class="topbar-page-title">Detalhes do treino</h1>
+              <p class="topbar-page-subtitle">
+                Veja os exercícios, objetivo e progresso da rotina.
+              </p>
+            </div>
+          </div>
+
+          <div class="topbar-right">
+            <a
+              class="btn btn-outline"
+              href="./workouts.html"
+              aria-label="Voltar para treinos"
+            >
+              <i class="bi bi-arrow-left" aria-hidden="true"></i>
+              <span class="btn-text">Voltar</span>
+            </a>
+
+            <a
+              class="topbar-button"
+              href="../profile/profile.html"
+              aria-label="Abrir perfil"
+            >
+              <i class="bi bi-person" aria-hidden="true"></i>
+            </a>
+          </div>
+        </header>
+
+        <main class="page-content">
+          <section class="workout-detail-header">
+            <div class="content-card">
+              <div class="content-card-header">
+                <div>
+                  <span class="badge badge-info">Dados do treino</span>
+
+                  <h2 class="content-card-title mt-md">
+                    Carregando treino
+                  </h2>
+
+                  <p class="content-card-description mt-sm">
+                    Os detalhes serão exibidos a partir do treino cadastrado.
+                  </p>
+                </div>
+              </div>
+
+              <div class="content-card-body">
+                <div class="workout-card-meta">
+                  <span class="workout-meta-pill">
+                    <i class="bi bi-bullseye" aria-hidden="true"></i>
+                    Objetivo não definido
+                  </span>
+
+                  <span class="workout-meta-pill">
+                    <i class="bi bi-bar-chart" aria-hidden="true"></i>
+                    Nível não definido
+                  </span>
+
+                  <span class="workout-meta-pill">
+                    <i class="bi bi-calendar-week" aria-hidden="true"></i>
+                    Frequência não definida
+                  </span>
+
+                  <span class="workout-meta-pill">
+                    <i class="bi bi-stopwatch" aria-hidden="true"></i>
+                    Tempo não registrado
+                  </span>
+                </div>
+
+                <div class="workout-progress-block mt-lg">
+                  <div class="workout-progress-info">
+                    <span>Progresso registrado</span>
+                    <strong>0%</strong>
+                  </div>
+
+                  <div class="workout-progress-bar">
+                    <span style="width: 0%"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="content-card-footer">
+                <a class="btn btn-outline" href="./workout-form.html">
+                  <i class="bi bi-pencil-square" aria-hidden="true"></i>
+                  Editar treino
+                </a>
+
+                <a class="btn btn-primary" href="./workout-session.html">
+                  <i class="bi bi-play-fill" aria-hidden="true"></i>
+                  Iniciar treino
+                </a>
+              </div>
+            </div>
+
+            <aside class="workout-session-card">
+              <span class="badge badge-info">Resumo</span>
+
+              <h3 class="card-title mt-md">Dados do treino</h3>
+
+              <div class="workout-summary-list mt-lg">
+                <div class="workout-summary-item">
+                  <span>Exercícios</span>
+                  <strong>0</strong>
+                </div>
+
+                <div class="workout-summary-item">
+                  <span>Séries totais</span>
+                  <strong>0</strong>
+                </div>
+
+                <div class="workout-summary-item">
+                  <span>Último treino</span>
+                  <strong>Nenhum</strong>
+                </div>
+
+                <div class="workout-summary-item">
+                  <span>Sessões</span>
+                  <strong>0</strong>
+                </div>
+              </div>
+
+              <div class="card mt-lg">
+                <h4 class="card-title">Exercícios cadastrados</h4>
+
+                <p class="card-description mt-sm">
+                  Nenhum exercício foi carregado ainda.
+                </p>
+              </div>
+            </aside>
+          </section>
+
+          <section class="dashboard-section">
+            <div class="dashboard-section-header">
+              <div>
+                <h2 class="dashboard-section-title">Exercícios do treino</h2>
+
+                <p class="page-description">
+                  Ordem sugerida para executar sua rotina de treino.
+                </p>
+              </div>
+
+              <a class="btn btn-outline" href="./workout-form.html">
+                <i class="bi bi-plus-lg" aria-hidden="true"></i>
+                Adicionar exercício
+              </a>
+            </div>
+
+            <div class="workout-exercise-list">
+              <article class="workout-exercise-item">
+                <span class="workout-exercise-order">0</span>
+
+                <div>
+                  <h3 class="card-title">Nenhum exercício carregado</h3>
+
+                  <p class="card-description">
+                    Os exercícios aparecem aqui quando um treino cadastrado é
+                    aberto.
+                  </p>
+                </div>
+
+                <div class="workout-card-meta">
+                  <span class="workout-meta-pill">0 séries</span>
+                  <span class="workout-meta-pill">Reps não informadas</span>
+                  <span class="workout-meta-pill">0s descanso</span>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="dashboard-section">
+            <div class="dashboard-section-header">
+              <div>
+                <h2 class="dashboard-section-title">Histórico deste treino</h2>
+
+                <p class="page-description">
+                  Últimas execuções registradas desta rotina.
+                </p>
+              </div>
+            </div>
+
+            <div class="content-card">
+              <div class="table-container">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Data</th>
+                      <th>Duração</th>
+                      <th>Status</th>
+                      <th>XP</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                      <td colspan="4">
+                        Nenhuma sessão registrada para este treino.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="../../assets/js/config.js"></script>
+    <script src="../../assets/js/utils.js"></script>
+    <script src="../../assets/js/api.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/layout.js"></script>
+    <script src="../../assets/js/storage.js"></script>
+    <script src="../../assets/js/workout-detail.js"></script>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ranking | Bora Treinar</title>
+    <meta
+      name="description"
+      content="Ranking pessoal de treinos do Bora Treinar."
+    />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="../assets/css/global.css" />
+    <link rel="stylesheet" href="../assets/css/layout.css" />
+    <link rel="stylesheet" href="../assets/css/components.css" />
+    <link rel="stylesheet" href="../assets/css/pages.css" />
+  </head>
+
+  <body data-page="ranking" data-page-type="protected" data-layout="app">
+    <div class="app-layout">
+      <aside class="sidebar" data-bt-sidebar aria-label="Menu principal"></aside>
+
+      <div class="main-area">
+        <header class="topbar" data-bt-topbar></header>
+
+        <main class="page-content">
+          <section class="page-header">
+            <div class="page-title-group">
+              <h2 class="page-title">Ranking</h2>
+              <p class="page-description">
+                Acompanhe seus treinos por XP registrado.
+              </p>
+            </div>
+          </section>
+
+          <section class="grid grid-3" aria-label="Resumo do ranking">
+            <article class="stats-card">
+              <div class="stats-card-header">
+                <span class="stats-card-title">XP total</span>
+                <span class="stats-card-icon">
+                  <i class="bi bi-lightning-charge" aria-hidden="true"></i>
+                </span>
+              </div>
+              <strong class="stats-card-value" data-ranking-total-xp>0</strong>
+              <span class="stats-card-description">
+                Calculado pelas sessões salvas.
+              </span>
+            </article>
+
+            <article class="stats-card">
+              <div class="stats-card-header">
+                <span class="stats-card-title">Sessões</span>
+                <span class="stats-card-icon">
+                  <i class="bi bi-check2-circle" aria-hidden="true"></i>
+                </span>
+              </div>
+              <strong class="stats-card-value" data-ranking-sessions>0</strong>
+              <span class="stats-card-description">Registros concluídos.</span>
+            </article>
+
+            <article class="stats-card">
+              <div class="stats-card-header">
+                <span class="stats-card-title">Melhor treino</span>
+                <span class="stats-card-icon">
+                  <i class="bi bi-trophy" aria-hidden="true"></i>
+                </span>
+              </div>
+              <strong class="stats-card-value" data-ranking-best>—</strong>
+              <span class="stats-card-description">Maior XP registrado.</span>
+            </article>
+          </section>
+
+          <section class="dashboard-section">
+            <div class="dashboard-section-header">
+              <div>
+                <h2 class="dashboard-section-title">Ranking pessoal</h2>
+                <p class="page-description">
+                  Lista baseada apenas nas suas sessões registradas.
+                </p>
+              </div>
+            </div>
+
+            <div class="ranking-list" data-ranking-list>
+              <article class="content-card">
+                <div class="content-card-header">
+                  <div>
+                    <span class="badge badge-info">Estado vazio</span>
+                    <h3 class="content-card-title mt-md">
+                      Nenhuma sessão registrada.
+                    </h3>
+                    <p class="content-card-description mt-sm">
+                      Finalize treinos para gerar XP e montar seu ranking.
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/branding.js"></script>
+    <script src="../assets/js/utils.js"></script>
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/layout.js"></script>
+    <script src="../assets/js/storage.js"></script>
+    <script src="../assets/js/ranking.js"></script>
+  </body>
+</html>

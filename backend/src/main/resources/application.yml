@@ -1,0 +1,40 @@
+server:
+  port: ${BACKEND_PORT:8080}
+  servlet:
+    context-path: /api/v1
+
+spring:
+  application:
+    name: bora-treinar-backend
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:bora_treinar}
+    username: ${POSTGRES_USER:bora_user}
+    password: ${POSTGRES_PASSWORD:bora_password_local}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          time_zone: UTC
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+app:
+  security:
+    jwt:
+      secret: ${JWT_SECRET:change-this-local-secret-only-change-before-production}
+      expiration: ${JWT_EXPIRATION:3600000}
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5500,http://127.0.0.1:5500,http://localhost:3000}
+
+logging:
+  level:
+    com.boratreinar: INFO
+    org.springframework.security: INFO

@@ -1,0 +1,81 @@
+/* Auth refinements */
+
+.auth-options-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: -4px;
+}
+
+.auth-remember-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  color: var(--color-text-light);
+  font-size: 0.92rem;
+  font-weight: 800;
+  cursor: pointer;
+  user-select: none;
+}
+
+.auth-remember-option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.auth-remember-option > span {
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  border: 1px solid rgba(148, 163, 184, 0.32);
+  border-radius: 7px;
+  background: rgba(2, 6, 23, 0.28);
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.auth-remember-option > span::after {
+  content: "";
+  width: 10px;
+  height: 6px;
+  border-left: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  opacity: 0;
+  transform: rotate(-45deg) translate(1px, -1px);
+  transition: opacity 0.2s ease;
+}
+
+.auth-remember-option input:checked + span {
+  border-color: rgba(124, 58, 237, 0.75);
+  background: linear-gradient(135deg, #5b7cff, #7c3aed);
+  box-shadow: 0 10px 24px rgba(91, 124, 255, 0.22);
+}
+
+.auth-remember-option input:checked + span::after {
+  opacity: 1;
+}
+
+.auth-remember-option input:focus-visible + span {
+  outline: 3px solid rgba(91, 124, 255, 0.28);
+  outline-offset: 3px;
+}
+
+.auth-remember-option strong {
+  color: inherit;
+  font-size: inherit;
+}
+
+@media (max-width: 520px) {
+  .auth-options-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

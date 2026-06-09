@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Dashboard | Bora Treinar</title>
+
+    <meta
+      name="description"
+      content="Dashboard do Bora Treinar com resumo de treinos, progresso, comunidades e ações rápidas."
+    />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="stylesheet" href="../../assets/css/global.css" />
+    <link rel="stylesheet" href="../../assets/css/layout.css" />
+    <link rel="stylesheet" href="../../assets/css/components.css" />
+    <link rel="stylesheet" href="../../assets/css/pages.css" />
+  </head>
+
+  <body data-page="dashboard" data-page-type="protected" data-layout="app">
+    <div class="app-layout">
+      <aside class="sidebar" data-bt-sidebar aria-label="Menu principal"></aside>
+
+      <div class="main-area">
+        <header class="topbar" data-bt-topbar></header>
+
+        <main class="page-content">
+          <section class="dashboard-welcome">
+            <div class="dashboard-welcome-card">
+              <h2>Bora treinar hoje?</h2>
+
+              <div class="dashboard-welcome-actions">
+                <a class="btn btn-primary" href="../workouts/workouts.html">
+                  <i class="bi bi-play-circle" aria-hidden="true"></i>
+                  Começar treino
+                </a>
+
+                <a class="btn btn-outline" href="../workouts/workout-form.html">
+                  <i class="bi bi-plus-circle" aria-hidden="true"></i>
+                  Criar treino
+                </a>
+              </div>
+            </div>
+
+            <aside class="dashboard-premium-card">
+              <span class="badge badge-info">
+                <i class="bi bi-gem" aria-hidden="true"></i>
+                Premium
+              </span>
+
+              <h3 class="mt-md">Recursos avançados</h3>
+
+              <a
+                class="btn btn-primary w-full mt-lg"
+                href="../premium/premium.html"
+              >
+                Ver Premium
+              </a>
+            </aside>
+          </section>
+
+          <section class="grid grid-4" aria-label="Resumo do usuário">
+            <article class="stats-card">
+              <div class="stats-card-header">
+                <span class="stats-card-title">Treinos concluídos</span>
+                <span class="stats-card-icon">
+                  <i class="bi bi-check2-circle" aria-hidden="true"></i>
+                </span>
+              </div>
+
+              <strong class="stats-card-value">0</strong>
+              <span class="stats-card-description" hidden></span>
+            </article>
+
+            <article class="stats-card">
+              <div class="stats-card-header">
+                <span class="stats-card-title">Sequência atual</span>
+                <span class="stats-card-icon">
+                  <i class="bi bi-fire" aria-hidden="true"></i>
+                </span>
+              </div>
+
+              <strong class="stats-card-value">0 dias</strong>
+              <span class="stats-card-description" hidden></span>
+            </article>
+
+            <article class="stats-card">
+              <div class="stats-card-header">
+                <span class="stats-card-title">XP acumulado</span>
+                <span class="stats-card-icon">
+                  <i class="bi bi-lightning-charge" aria-hidden="true"></i>
+                </span>
+              </div>
+
+              <strong class="stats-card-value">0</strong>
+              <span class="stats-card-description" hidden></span>
+            </article>
+
+            <article class="stats-card">
+              <div class="stats-card-header">
+                <span class="stats-card-title">Ranking</span>
+                <span class="stats-card-icon">
+                  <i class="bi bi-trophy" aria-hidden="true"></i>
+                </span>
+              </div>
+
+              <strong class="stats-card-value">Pessoal</strong>
+              <span class="stats-card-description" hidden></span>
+            </article>
+          </section>
+
+          <section class="dashboard-section">
+            <div class="dashboard-section-header">
+              <h2 class="dashboard-section-title">Ações rápidas</h2>
+
+              <a class="btn btn-outline" href="../workouts/workouts.html">
+                Ver treinos
+              </a>
+            </div>
+
+            <div class="dashboard-quick-actions">
+              <a class="quick-action-card" href="../workouts/workout-form.html">
+                <span class="quick-action-icon">
+                  <i class="bi bi-plus-circle" aria-hidden="true"></i>
+                </span>
+
+                <span class="quick-action-title">Novo treino</span>
+              </a>
+
+              <a class="quick-action-card" href="../exercises/exercises.html">
+                <span class="quick-action-icon">
+                  <i class="bi bi-heart-pulse" aria-hidden="true"></i>
+                </span>
+
+                <span class="quick-action-title">Exercícios</span>
+              </a>
+
+              <a
+                class="quick-action-card"
+                href="../communities/communities.html"
+              >
+                <span class="quick-action-icon">
+                  <i class="bi bi-people" aria-hidden="true"></i>
+                </span>
+
+                <span class="quick-action-title">Comunidades</span>
+              </a>
+
+              <a class="quick-action-card" href="../premium/premium.html">
+                <span class="quick-action-icon">
+                  <i class="bi bi-gem" aria-hidden="true"></i>
+                </span>
+
+                <span class="quick-action-title">Premium</span>
+              </a>
+            </div>
+          </section>
+
+          <section class="dashboard-section" data-dashboard-workout-section>
+            <div class="dashboard-section-header">
+              <h2 class="dashboard-section-title">Treino cadastrado</h2>
+
+              <a class="btn btn-outline" href="../workouts/workout-form.html">
+                Criar treino
+              </a>
+            </div>
+
+            <article class="content-card">
+              <div class="content-card-header">
+                <div>
+                  <span class="badge badge-info">Estado vazio</span>
+
+                  <h3 class="content-card-title mt-md">
+                    Nenhum treino cadastrado ainda.
+                  </h3>
+                </div>
+              </div>
+            </article>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="../../assets/js/config.js"></script>
+    <script src="../../assets/js/branding.js"></script>
+    <script src="../../assets/js/utils.js"></script>
+    <script src="../../assets/js/api.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/layout.js"></script>
+    <script src="../../assets/js/storage.js"></script>
+    <script src="../../assets/js/dashboard.js"></script>
+  </body>
+</html>

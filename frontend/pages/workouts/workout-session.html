@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Sessão de treino | Bora Treinar</title>
+
+    <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg" />
+    <link rel="shortcut icon" href="../../assets/img/favicon.svg" />
+    <meta name="theme-color" content="#070a14" />
+
+    <meta
+      name="description"
+      content="Execute sua sessão de treino no Bora Treinar, acompanhe exercícios, séries, descanso e progresso."
+    />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="stylesheet" href="../../assets/css/global.css" />
+    <link rel="stylesheet" href="../../assets/css/layout.css" />
+    <link rel="stylesheet" href="../../assets/css/components.css" />
+    <link rel="stylesheet" href="../../assets/css/pages.css" />
+  </head>
+
+  <body
+    data-page="workout-session"
+    data-page-type="protected"
+    data-layout="app"
+  >
+    <div class="app-layout">
+      <aside class="sidebar" aria-label="Menu principal">
+        <a
+          class="sidebar-logo"
+          href="../dashboard/dashboard.html"
+          aria-label="Ir para o dashboard"
+        >
+          <span class="sidebar-logo-icon">
+            <i class="bi bi-lightning-charge-fill" aria-hidden="true"></i>
+          </span>
+
+          <span class="sidebar-logo-text">
+            <span class="sidebar-logo-title">Bora Treinar</span>
+            <span class="sidebar-logo-subtitle">Fitness social</span>
+          </span>
+        </a>
+
+        <button
+          class="sidebar-mobile-close"
+          type="button"
+          data-bt-sidebar-close
+          aria-label="Fechar menu"
+        >
+          <i class="bi bi-x-lg" aria-hidden="true"></i>
+        </button>
+
+        <nav class="sidebar-nav" aria-label="Navegação interna">
+          <span class="sidebar-section-title">Menu</span>
+
+          <a class="sidebar-link" href="../dashboard/dashboard.html">
+            <span class="sidebar-link-icon">
+              <i class="bi bi-house-door" aria-hidden="true"></i>
+            </span>
+            <span class="sidebar-link-text">Inicial</span>
+          </a>
+
+          <a
+            class="sidebar-link active"
+            href="./workouts.html"
+            aria-current="page"
+          >
+            <span class="sidebar-link-icon">
+              <i class="bi bi-activity" aria-hidden="true"></i>
+            </span>
+            <span class="sidebar-link-text">Treinos</span>
+          </a>
+
+          <a class="sidebar-link" href="../exercises/exercises.html">
+            <span class="sidebar-link-icon">
+              <i class="bi bi-heart-pulse" aria-hidden="true"></i>
+            </span>
+            <span class="sidebar-link-text">Exercícios</span>
+          </a>
+
+          <a class="sidebar-link" href="../communities/communities.html">
+            <span class="sidebar-link-icon">
+              <i class="bi bi-people" aria-hidden="true"></i>
+            </span>
+            <span class="sidebar-link-text">Comunidades</span>
+          </a>
+
+          <a class="sidebar-link" href="../search.html">
+            <span class="sidebar-link-icon">
+              <i class="bi bi-search" aria-hidden="true"></i>
+            </span>
+            <span class="sidebar-link-text">Pesquisa</span>
+          </a>
+
+          <a class="sidebar-link" href="../ranking.html">
+            <span class="sidebar-link-icon">
+              <i class="bi bi-trophy" aria-hidden="true"></i>
+            </span>
+            <span class="sidebar-link-text">Ranking</span>
+          </a>
+
+          <span class="sidebar-section-title">Conta</span>
+
+          <a class="sidebar-link" href="../premium/premium.html">
+            <span class="sidebar-link-icon">
+              <i class="bi bi-gem" aria-hidden="true"></i>
+            </span>
+            <span class="sidebar-link-text">Premium</span>
+          </a>
+
+          <a class="sidebar-link" href="../profile/profile.html">
+            <span class="sidebar-link-icon">
+              <i class="bi bi-person-circle" aria-hidden="true"></i>
+            </span>
+            <span class="sidebar-link-text">Perfil</span>
+          </a>
+
+          <a class="sidebar-link" href="../settings/settings.html">
+            <span class="sidebar-link-icon">
+              <i class="bi bi-gear" aria-hidden="true"></i>
+            </span>
+            <span class="sidebar-link-text">Configurações</span>
+          </a>
+
+          <a
+            class="sidebar-link"
+            href="../admin/admin-dashboard.html"
+            data-admin-only
+          >
+            <span class="sidebar-link-icon">
+              <i class="bi bi-shield-lock" aria-hidden="true"></i>
+            </span>
+            <span class="sidebar-link-text">Admin</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="sidebar-user">
+            <span class="sidebar-user-avatar" data-user-initials>BT</span>
+
+            <span class="sidebar-user-info">
+              <span class="sidebar-user-name" data-user-name>Usuário</span>
+              <span class="sidebar-user-role" data-premium-status>
+                Gratuito
+              </span>
+            </span>
+          </div>
+
+          <button class="btn btn-outline w-full" type="button" data-logout>
+            <i class="bi bi-box-arrow-right" aria-hidden="true"></i>
+            Sair
+          </button>
+        </div>
+      </aside>
+
+      <div class="main-area">
+        <header class="topbar">
+          <div class="topbar-left">
+            <button
+              class="mobile-menu-toggle"
+              type="button"
+              data-bt-sidebar-toggle
+              aria-label="Abrir menu"
+            >
+              <i class="bi bi-list" aria-hidden="true"></i>
+            </button>
+
+            <div>
+              <h1 class="topbar-page-title">Sessão de treino</h1>
+              <p class="topbar-page-subtitle">
+                Acompanhe sua execução, séries e descanso.
+              </p>
+            </div>
+          </div>
+
+          <div class="topbar-right">
+            <a
+              class="btn btn-outline"
+              href="./workout-detail.html"
+              aria-label="Voltar para detalhes"
+            >
+              <i class="bi bi-arrow-left" aria-hidden="true"></i>
+              <span class="btn-text">Voltar</span>
+            </a>
+
+            <a
+              class="topbar-button"
+              href="../profile/profile.html"
+              aria-label="Abrir perfil"
+            >
+              <i class="bi bi-person" aria-hidden="true"></i>
+            </a>
+          </div>
+        </header>
+
+        <main class="page-content">
+          <section class="workout-session-hero">
+            <div>
+              <span class="badge badge-info">Sessão de treino</span>
+
+              <h2>Carregando treino</h2>
+
+              <p>
+                Os exercícios aparecem aqui quando um treino cadastrado é
+                aberto.
+              </p>
+            </div>
+
+            <div class="workout-session-timer">
+              <span>Tempo de treino</span>
+              <strong>00:00</strong>
+              <a
+                class="btn btn-outline workout-session-focus-link"
+                href="./workout-timer.html?mode=workout"
+                aria-label="Abrir cronometro de treino em modo foco"
+              >
+                <i class="bi bi-stopwatch" aria-hidden="true"></i>
+                <span>Modo foco</span>
+              </a>
+            </div>
+          </section>
+
+          <section class="workout-session-layout">
+            <div class="workout-session-main">
+              <article class="content-card">
+                <div class="content-card-header">
+                  <div>
+                    <span class="badge badge-info">Exercício 0 de 0</span>
+
+                    <h2 class="content-card-title mt-md">
+                      Nenhum exercício carregado
+                    </h2>
+
+                    <p class="content-card-description mt-sm">
+                      Selecione um treino cadastrado para iniciar uma sessão.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="content-card-body">
+                  <div class="workout-current-exercise-grid">
+                    <div class="workout-current-metric">
+                      <span>Séries</span>
+                      <strong>0</strong>
+                    </div>
+
+                    <div class="workout-current-metric">
+                      <span>Repetições</span>
+                      <strong>Não informadas</strong>
+                    </div>
+
+                    <div class="workout-current-metric">
+                      <span>Descanso</span>
+                      <strong>0s</strong>
+                    </div>
+
+                    <div class="workout-current-metric">
+                      <span>Status</span>
+                      <strong>Aguardando</strong>
+                    </div>
+                  </div>
+
+                  <div class="dashboard-section">
+                    <div class="dashboard-section-header">
+                      <div>
+                        <h3 class="dashboard-section-title">
+                          Séries do exercício
+                        </h3>
+
+                        <p class="page-description">
+                          Marque cada série conforme for concluindo.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="set-list">
+                      <label class="set-item">
+                        <input type="checkbox" />
+
+                        <span class="set-check">
+                          <i class="bi bi-check-lg" aria-hidden="true"></i>
+                        </span>
+
+                        <span class="set-info">
+                          <strong>Série não carregada</strong>
+                          <small>Aguardando treino cadastrado</small>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="content-card-footer workout-session-footer">
+                  <button
+                    class="btn btn-outline"
+                    type="button"
+                    data-session-toggle
+                    aria-label="Iniciar ou pausar descanso"
+                  >
+                    <i class="bi bi-play-circle" aria-hidden="true"></i>
+                    <span>Iniciar descanso</span>
+                  </button>
+
+                  <button
+                    class="btn btn-outline"
+                    type="button"
+                    data-workout-timer-reset
+                    aria-label="Reiniciar descanso"
+                  >
+                    <i class="bi bi-arrow-clockwise" aria-hidden="true"></i>
+                    <span>Reiniciar descanso</span>
+                  </button>
+
+                  <button
+                    class="btn btn-outline"
+                    type="button"
+                    data-next-exercise
+                    aria-label="Ir para o próximo exercício"
+                  >
+                    <i class="bi bi-arrow-right-circle" aria-hidden="true"></i>
+                    <span>Próximo exercício</span>
+                  </button>
+
+                  <button
+                    class="btn btn-primary"
+                    type="button"
+                    data-finish-workout
+                    aria-label="Finalizar treino"
+                  >
+                    <i class="bi bi-check2-circle" aria-hidden="true"></i>
+                    <span>Finalizar treino</span>
+                  </button>
+                </div>
+              </article>
+
+              <section class="dashboard-section">
+                <div class="dashboard-section-header">
+                  <div>
+                    <h2 class="dashboard-section-title">Fila de exercícios</h2>
+
+                    <p class="page-description">
+                      Veja a ordem completa da sessão de hoje.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="workout-exercise-list">
+                  <article class="workout-exercise-item active">
+                    <span class="workout-exercise-order">0</span>
+
+                    <div>
+                      <h3 class="card-title">Nenhum exercício carregado</h3>
+                      <p class="card-description">
+                        A fila será preenchida pelo treino cadastrado.
+                      </p>
+                    </div>
+
+                    <span class="badge badge-info">Aguardando</span>
+                  </article>
+                </div>
+              </section>
+            </div>
+
+            <aside class="workout-session-actions">
+              <div class="workout-session-card">
+                <span class="badge badge-info">Resumo</span>
+
+                <h3 class="card-title mt-md">Progresso da sessão</h3>
+
+                <div class="workout-progress-block mt-lg">
+                  <div class="workout-progress-info">
+                    <span>Treino concluído</span>
+                    <strong>0%</strong>
+                  </div>
+
+                  <div class="workout-progress-bar">
+                    <span style="width: 0%"></span>
+                  </div>
+                </div>
+
+                <div class="workout-summary-list mt-lg">
+                  <div class="workout-summary-item">
+                    <span>Exercício atual</span>
+                    <strong>0/0</strong>
+                  </div>
+
+                  <div class="workout-summary-item">
+                    <span>Séries feitas</span>
+                    <strong>0/0</strong>
+                  </div>
+
+                  <div class="workout-summary-item">
+                    <span>Tempo ativo</span>
+                    <strong>00:00</strong>
+                  </div>
+
+                  <div class="workout-summary-item">
+                    <span>XP estimado</span>
+                    <strong>0 XP</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="workout-session-card mt-lg">
+                <span class="badge badge-warning">Descanso</span>
+
+                <h3 class="card-title mt-md">Cronômetro</h3>
+
+                <div class="rest-timer">
+                  <strong>01:30</strong>
+                  <span>Tempo sugerido entre séries</span>
+                </div>
+
+                <div class="rest-timer-actions">
+                  <button
+                    class="btn btn-primary"
+                    type="button"
+                    data-rest-timer-toggle
+                    aria-label="Iniciar ou pausar descanso"
+                  >
+                    <i class="bi bi-play-circle" aria-hidden="true"></i>
+                    <span>Iniciar</span>
+                  </button>
+
+                  <button
+                    class="btn btn-outline"
+                    type="button"
+                    data-rest-timer-reset
+                    aria-label="Reiniciar descanso"
+                  >
+                    <i class="bi bi-arrow-clockwise" aria-hidden="true"></i>
+                    <span>Reiniciar</span>
+                  </button>
+
+                  <a
+                    class="btn btn-outline"
+                    href="./workout-timer.html?mode=rest&seconds=90"
+                    aria-label="Abrir descanso em modo foco"
+                  >
+                    <i class="bi bi-hourglass-split" aria-hidden="true"></i>
+                    <span>Modo foco</span>
+                  </a>
+                </div>
+              </div>
+            </aside>
+          </section>
+
+          <div
+            class="floating-session-timer is-hidden"
+            data-session-floating-timer
+          >
+            <div class="floating-session-timer-item">
+              <span>Treino</span>
+              <strong data-floating-workout-time>00:00</strong>
+            </div>
+
+            <div class="floating-session-timer-divider"></div>
+
+            <div class="floating-session-timer-item">
+              <span>Descanso</span>
+              <strong data-floating-rest-time>01:30</strong>
+            </div>
+
+            <div class="floating-session-timer-progress">
+              <span data-floating-progress-bar></span>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="../../assets/js/config.js"></script>
+    <script src="../../assets/js/utils.js"></script>
+    <script src="../../assets/js/api.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/layout.js"></script>
+    <script src="../../assets/js/storage.js"></script>
+    <script src="../../assets/js/workout-session.js"></script>
+    <script src="../../assets/js/workout-session-local.js"></script>
+  </body>
+</html>

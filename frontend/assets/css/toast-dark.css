@@ -1,0 +1,89 @@
+/* =========================================================
+   Toast dark mode fixes
+   ========================================================= */
+
+html.dark-mode .toast,
+body.dark-mode .toast {
+  background: linear-gradient(180deg, #111827, #0b1220) !important;
+  border-color: rgba(91, 124, 255, 0.28) !important;
+  color: #f8fafc !important;
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.42) !important;
+}
+
+html.dark-mode .toast-content,
+body.dark-mode .toast-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 3px;
+}
+
+html.dark-mode .toast-content strong,
+body.dark-mode .toast-content strong,
+html.dark-mode .toast-title,
+body.dark-mode .toast-title {
+  color: #f8fafc !important;
+  font-weight: 800;
+}
+
+html.dark-mode .toast-content span,
+body.dark-mode .toast-content span,
+html.dark-mode .toast-message,
+body.dark-mode .toast-message {
+  color: #a8b3c7 !important;
+}
+
+html.dark-mode .toast-close,
+body.dark-mode .toast-close {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 10px;
+  background-color: rgba(15, 23, 42, 0.72);
+  color: #cbd5e1;
+  cursor: pointer;
+}
+
+html.dark-mode .toast-close:hover,
+body.dark-mode .toast-close:hover {
+  border-color: rgba(91, 124, 255, 0.38);
+  background-color: rgba(91, 124, 255, 0.16);
+  color: #ffffff;
+}
+
+html.dark-mode .toast-danger,
+body.dark-mode .toast-danger {
+  border-left-color: #f87171 !important;
+}
+
+html.dark-mode .toast-warning,
+body.dark-mode .toast-warning {
+  border-left-color: #fbbf24 !important;
+}
+
+html.dark-mode .toast-info,
+body.dark-mode .toast-info {
+  border-left-color: #60a5fa !important;
+}
+
+html.dark-mode .toast-success,
+body.dark-mode .toast-success {
+  border-left-color: #22c55e !important;
+}
+
+@media (max-width: 768px) {
+  .toast-container {
+    left: 16px;
+    right: 16px;
+    top: 16px;
+  }
+
+  .toast {
+    min-width: 0;
+    width: 100%;
+    max-width: none;
+  }
+}

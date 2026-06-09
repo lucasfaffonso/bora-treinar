@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>500 | Bora Treinar</title>
+
+    <meta
+      name="description"
+      content="Algo deu errado no Bora Treinar. Tente novamente em instantes."
+    />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="stylesheet" href="../../assets/css/global.css" />
+    <link rel="stylesheet" href="../../assets/css/components.css" />
+    <link rel="stylesheet" href="../../assets/css/error-pages.css" />
+  </head>
+
+  <body class="error-page" data-page="error-500" data-page-type="public">
+    <main class="error-card" aria-labelledby="errorTitle">
+      <span class="error-logo" aria-hidden="true">
+        <i class="bi bi-lightning-charge-fill"></i>
+      </span>
+
+      <span class="error-code">Erro 500</span>
+
+      <h1 class="error-title" id="errorTitle">Algo deu errado</h1>
+
+      <p class="error-description">
+        Não foi possível concluir esta ação agora. Tente novamente em instantes
+        ou volte para o app.
+      </p>
+
+      <div class="error-actions">
+        <a class="btn btn-primary" href="../dashboard/dashboard.html">
+          <i class="bi bi-house-door" aria-hidden="true"></i>
+          Voltar ao dashboard
+        </a>
+
+        <a class="btn btn-outline" href="../../index.html">
+          Página inicial
+        </a>
+      </div>
+    </main>
+  </body>
+</html>

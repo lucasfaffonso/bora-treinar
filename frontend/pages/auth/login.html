@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Entrar | Bora Treinar</title>
+
+    <meta
+      name="description"
+      content="Entre na sua conta Bora Treinar para acessar seus treinos, comunidades, ranking e recursos premium."
+    />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="stylesheet" href="../../assets/css/global.css" />
+    <link rel="stylesheet" href="../../assets/css/layout.css" />
+    <link rel="stylesheet" href="../../assets/css/components.css" />
+    <link rel="stylesheet" href="../../assets/css/pages.css" />
+    <link rel="stylesheet" href="../../assets/css/auth.css" />
+  </head>
+
+  <body data-page="login" data-page-type="auth">
+    <main class="auth-page">
+      <section class="auth-brand-panel">
+        <div class="auth-brand-content">
+          <a
+            class="auth-logo"
+            href="../../index.html"
+            aria-label="Voltar para página inicial"
+          >
+            <span class="auth-logo-icon">
+              <i class="bi bi-lightning-charge-fill" aria-hidden="true"></i>
+            </span>
+
+            <span class="auth-logo-text">Bora Treinar</span>
+          </a>
+
+          <span class="auth-brand-badge">
+            <i class="bi bi-stars" aria-hidden="true"></i>
+            Plataforma fitness social
+          </span>
+
+          <h1 class="auth-brand-title">
+            Volte para seus treinos e continue evoluindo.
+          </h1>
+
+          <p class="auth-brand-description">
+            Acesse sua rotina, acompanhe seu progresso, participe das
+            comunidades e mantenha sua sequência de treinos ativa.
+          </p>
+
+          <div class="auth-brand-features">
+            <div class="auth-brand-feature">
+              <span>
+                <i class="bi bi-activity" aria-hidden="true"></i>
+              </span>
+
+              <div>
+                <strong>Treinos</strong>
+                <small>Organize sua rotina fitness</small>
+              </div>
+            </div>
+
+            <div class="auth-brand-feature">
+              <span>
+                <i class="bi bi-people" aria-hidden="true"></i>
+              </span>
+
+              <div>
+                <strong>Comunidades</strong>
+                <small>Participe de grupos e desafios</small>
+              </div>
+            </div>
+
+            <div class="auth-brand-feature">
+              <span>
+                <i class="bi bi-trophy" aria-hidden="true"></i>
+              </span>
+
+              <div>
+                <strong>Ranking</strong>
+                <small>Ganhe XP por consistência</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="auth-form-panel">
+        <div class="auth-card">
+          <div class="auth-card-header">
+            <a
+              class="auth-mobile-logo"
+              href="../../index.html"
+              aria-label="Voltar para página inicial"
+            >
+              <span class="auth-logo-icon">
+                <i class="bi bi-lightning-charge-fill" aria-hidden="true"></i>
+              </span>
+
+              <span>Bora Treinar</span>
+            </a>
+
+            <h2 class="auth-card-title">Entrar</h2>
+
+            <p class="auth-card-subtitle">
+              Acesse sua conta para continuar sua evolução.
+            </p>
+          </div>
+
+          <div
+            id="loginAlert"
+            class="alert alert-danger auth-message"
+            role="alert"
+            aria-live="polite"
+          ></div>
+
+          <form id="loginForm" class="auth-form" novalidate>
+            <div class="input-group">
+              <label for="email">E-mail</label>
+
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="input"
+                placeholder="seuemail@exemplo.com"
+                autocomplete="email"
+                required
+              />
+
+              <small class="form-error" id="emailError"></small>
+            </div>
+
+            <div class="input-group">
+              <label for="password">Senha</label>
+
+              <div class="auth-password-wrapper">
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="input"
+                  placeholder="Digite sua senha"
+                  autocomplete="current-password"
+                  required
+                />
+
+                <button
+                  type="button"
+                  class="auth-password-toggle"
+                  data-toggle-password="password"
+                  aria-label="Mostrar ou ocultar senha"
+                >
+                  <i class="bi bi-eye" aria-hidden="true"></i>
+                </button>
+              </div>
+
+              <small class="form-error" id="passwordError"></small>
+            </div>
+
+            <div class="auth-options-row">
+              <label class="auth-remember-option" for="rememberUser">
+                <input type="checkbox" id="rememberUser" name="rememberUser" />
+                <span aria-hidden="true"></span>
+                <strong>Lembrar-me</strong>
+              </label>
+            </div>
+
+            <p class="auth-footer-text text-muted">
+              A recuperação de senha estará disponível em breve.
+            </p>
+
+            <button
+              type="submit"
+              id="loginButton"
+              class="btn btn-primary auth-submit"
+            >
+              <span class="btn-label">
+                <i class="bi bi-box-arrow-in-right" aria-hidden="true"></i>
+                Entrar na conta
+              </span>
+
+              <span class="btn-loading hidden">
+                <i class="bi bi-arrow-repeat" aria-hidden="true"></i>
+                Entrando...
+              </span>
+            </button>
+          </form>
+
+          <p class="auth-footer-text">
+            Ainda não tem conta?
+            <a href="register.html">Criar conta grátis</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script src="../../assets/js/config.js"></script>
+    <script src="../../assets/js/branding.js"></script>
+    <script src="../../assets/js/utils.js"></script>
+    <script src="../../assets/js/api.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/login.js"></script>
+  </body>
+</html>

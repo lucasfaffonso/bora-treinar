@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Configurações | Bora Treinar</title>
+    <meta
+      name="description"
+      content="Configurações da conta e preferências do Bora Treinar."
+    />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="../../assets/css/global.css" />
+    <link rel="stylesheet" href="../../assets/css/layout.css" />
+    <link rel="stylesheet" href="../../assets/css/components.css" />
+    <link rel="stylesheet" href="../../assets/css/pages.css" />
+    <link rel="stylesheet" href="../../assets/css/user-common-pages.css" />
+    <link rel="stylesheet" href="../../assets/css/settings.css" />
+  </head>
+
+  <body data-page="settings" data-page-type="protected" data-layout="app">
+    <div class="app-layout">
+      <aside class="sidebar" data-bt-sidebar aria-label="Menu principal"></aside>
+
+      <div class="main-area">
+        <header class="topbar" data-bt-topbar></header>
+
+        <main class="page-content user-common-page settings-page">
+          <section class="user-page-hero settings-user-hero">
+            <div class="user-page-hero-content">
+              <span class="badge badge-info">
+                <i class="bi bi-gear" aria-hidden="true"></i>
+                Configurações
+              </span>
+
+              <h1>Personalize sua conta no Bora Treinar.</h1>
+
+              <p>
+                Ajuste os dados exibidos no app, confira seu tipo de conta e escolha
+                a aparência que combina melhor com sua rotina.
+              </p>
+
+              <div class="user-page-hero-actions">
+                <a class="btn btn-primary" href="#account">
+                  <i class="bi bi-pencil-square" aria-hidden="true"></i>
+                  Editar dados
+                </a>
+                <a class="btn btn-outline" href="../profile/profile.html">
+                  <i class="bi bi-person-circle" aria-hidden="true"></i>
+                  Ver perfil
+                </a>
+              </div>
+            </div>
+
+            <aside class="user-page-hero-panel settings-profile-panel">
+              <span class="settings-profile-avatar" data-settings-avatar>BT</span>
+              <div>
+                <span class="hero-panel-label">Conta atual</span>
+                <strong data-settings-name-display>Usuário</strong>
+                <p data-settings-email-display>email@exemplo.com</p>
+              </div>
+            </aside>
+          </section>
+
+          <section class="settings-summary-grid" aria-label="Resumo da conta">
+            <article class="settings-summary-card">
+              <span class="settings-summary-icon">
+                <i class="bi bi-gem" aria-hidden="true"></i>
+              </span>
+              <small>Plano atual</small>
+              <strong data-settings-plan>Gratuito</strong>
+              <p>Recursos liberados para sua conta.</p>
+            </article>
+
+            <article class="settings-summary-card">
+              <span class="settings-summary-icon">
+                <i class="bi bi-person-badge" aria-hidden="true"></i>
+              </span>
+              <small>Tipo de conta</small>
+              <strong data-settings-role>Usuário</strong>
+              <p>Define quais áreas aparecem para você.</p>
+            </article>
+
+            <article class="settings-summary-card">
+              <span class="settings-summary-icon">
+                <i class="bi bi-moon-stars" aria-hidden="true"></i>
+              </span>
+              <small>Aparência</small>
+              <strong data-settings-theme-label>Modo escuro</strong>
+              <p>Preferência visual deste navegador.</p>
+            </article>
+          </section>
+
+          <section class="settings-layout settings-user-layout">
+            <nav class="settings-nav settings-user-nav" aria-label="Seções de configurações">
+              <a class="settings-nav-link active" href="#account">
+                <i class="bi bi-person" aria-hidden="true"></i>
+                Dados
+              </a>
+              <a class="settings-nav-link" href="#preferences">
+                <i class="bi bi-palette" aria-hidden="true"></i>
+                Aparência
+              </a>
+              <a class="settings-nav-link" href="#privacy">
+                <i class="bi bi-shield-check" aria-hidden="true"></i>
+                Segurança
+              </a>
+            </nav>
+
+            <div class="settings-content settings-user-content">
+              <section class="content-card settings-card" id="account">
+                <div class="content-card-header settings-card-header">
+                  <div>
+                    <span class="badge badge-info">Conta</span>
+                    <h2 class="content-card-title mt-md">Dados exibidos no app</h2>
+                    <p class="content-card-description mt-sm">
+                      Atualize o nome e o e-mail que aparecem nas telas do Bora Treinar.
+                    </p>
+                  </div>
+                </div>
+
+                <form class="settings-form settings-user-form" data-settings-form>
+                  <div class="input-group">
+                    <label for="settingsName">Nome</label>
+                    <input
+                      class="input"
+                      id="settingsName"
+                      name="name"
+                      type="text"
+                      required
+                      minlength="2"
+                      autocomplete="name"
+                      data-settings-name
+                      data-required-message="Informe o nome que deve aparecer no app."
+                    />
+                    <small class="form-error" data-bt-form-error></small>
+                  </div>
+
+                  <div class="input-group">
+                    <label for="settingsEmail">E-mail</label>
+                    <input
+                      class="input"
+                      id="settingsEmail"
+                      name="email"
+                      type="email"
+                      required
+                      autocomplete="email"
+                      data-settings-email
+                      data-required-message="Informe o e-mail da conta."
+                    />
+                    <small class="form-error" data-bt-form-error></small>
+                  </div>
+
+                  <div class="settings-form-actions">
+                    <button class="btn btn-primary" type="submit">
+                      <i class="bi bi-check2-circle" aria-hidden="true"></i>
+                      Salvar alterações
+                    </button>
+
+                    <a class="btn btn-outline" href="../profile/profile.html">
+                      <i class="bi bi-person-circle" aria-hidden="true"></i>
+                      Ver perfil
+                    </a>
+                  </div>
+                </form>
+              </section>
+
+              <section class="content-card settings-card" id="preferences">
+                <div class="content-card-header settings-card-header">
+                  <div>
+                    <span class="badge badge-info">Aparência</span>
+                    <h2 class="content-card-title mt-md">Tema do app</h2>
+                    <p class="content-card-description mt-sm">
+                      Escolha entre o visual escuro padrão ou uma versão clara.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="content-card-body settings-preference-body">
+                  <div class="theme-preference-row settings-theme-row">
+                    <div>
+                      <h3 data-settings-theme-title>Modo escuro</h3>
+                      <p data-settings-theme-description>
+                        Visual escuro ativo, seguindo a identidade principal do Bora Treinar.
+                      </p>
+                    </div>
+
+                    <label class="theme-toggle settings-theme-toggle" for="themeToggle">
+                      <input
+                        type="checkbox"
+                        id="themeToggle"
+                        data-theme-toggle
+                        role="switch"
+                        aria-label="Ativar ou desativar modo claro"
+                      />
+                      <span class="theme-toggle-track" aria-hidden="true">
+                        <span class="theme-toggle-thumb"></span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </section>
+
+              <section class="content-card settings-card" id="privacy">
+                <div class="content-card-header settings-card-header">
+                  <div>
+                    <span class="badge badge-info">Segurança</span>
+                    <h2 class="content-card-title mt-md">Conta e privacidade</h2>
+                    <p class="content-card-description mt-sm">
+                      Sua senha não é exibida nem editada nesta tela. Para entrar novamente,
+                      use suas credenciais na página de login.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="content-card-body settings-security-list">
+                  <div class="settings-security-item">
+                    <span><i class="bi bi-shield-lock" aria-hidden="true"></i></span>
+                    <div>
+                      <strong>Senha protegida</strong>
+                      <p>O app não mostra sua senha nas configurações.</p>
+                    </div>
+                  </div>
+
+                  <div class="settings-security-item">
+                    <span><i class="bi bi-person-check" aria-hidden="true"></i></span>
+                    <div>
+                      <strong>Conta identificada</strong>
+                      <p>Nome e e-mail ajudam a personalizar sua experiência.</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="../../assets/js/config.js"></script>
+    <script src="../../assets/js/branding.js"></script>
+    <script src="../../assets/js/utils.js"></script>
+    <script src="../../assets/js/api.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/layout.js"></script>
+    <script src="../../assets/js/settings.js"></script>
+  </body>
+</html>

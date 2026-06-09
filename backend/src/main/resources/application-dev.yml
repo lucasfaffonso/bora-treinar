@@ -1,0 +1,17 @@
+server:
+  port: ${BACKEND_PORT:8080}
+  servlet:
+    context-path: /api/v1
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:bora_treinar}
+    username: ${POSTGRES_USER:bora_user}
+    password: ${POSTGRES_PASSWORD:bora_password_local}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: false
+
+logging:
+  level:
+    com.boratreinar: DEBUG
